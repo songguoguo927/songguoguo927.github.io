@@ -8,19 +8,19 @@
 
   <!-- Title -->
   
-  <title>我爱学习 - Hexo</title>
+  <title>我爱学习 - Xjm&#39;s Blog</title>
 
   <!--Favicon-->
   <link rel="icon" href="favicon/favicon.ico">
 
   <!--Description-->
   
-      <meta name="description" content="学会如何用hexo写自己的博客（文章摘要）">
+      <meta name="description" content="The record came all the way">
   
 
   <!--Author-->
   
-      <meta name="author" content="John Doe">
+      <meta name="author" content="xjm">
   
 
   <!-- Pure CSS -->
@@ -44,14 +44,30 @@
 
   <body>
   	<div class="container-fluid navbar-container m-sm-5">
-      <!-- Header -->
-      <nav class="navbar navbar-toggleable-sm navbar-light px-1 py-3 my-3 mb-sm-5">
-  <a class="navbar-brand ml-2" href="/">Hexo</a>
+             <!-- Header -->
+             <nav class="navbar navbar-toggleable-sm navbar-light px-1 py-3 my-3 mb-sm-5">
+  <a class="navbar-brand ml-2" href="/">Xjm's Blog</a>
   <button class="navbar-toggler navbar-toggler-right py-2" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
   <div class="collapse navbar-collapse text-center" id="navbarCollapse">
     <ul class="navbar-nav ml-auto my-auto">
+      
+        <li class="nav-item">
+          <a class="nav-link" href="/">Home</a>
+        </li>
+      
+        <li class="nav-item">
+          <a class="nav-link" href="/archives">Archives</a>
+        </li>
+      
+        <li class="nav-item">
+          <a class="nav-link" href="/contact">Contact</a>
+        </li>
+      
+        <li class="nav-item">
+          <a class="nav-link" href="https://github.com/songguoguo927">Github</a>
+        </li>
       
     </ul>
     <hr class="hidden-md-up" />
@@ -63,14 +79,14 @@
   			<div class="col-12 mb-4">
   <img class="img-fluid project-img" src="/images/unsplash.jpg" alt="我爱学习">
 </div>
-<div class="col-lg-4 col-12 pt-3 px-4 pr-lg-5">
+<div class="col-lg-1 col-12 pt-3 px-4 pr-lg-5">
   <h1>我爱学习</h1>
 </div>
-<div class="col-lg-8 col-12 pt-lg-3 mb-4 pl-lg-5 px-lg-0 px-4 portfolio-content">
+<div class="col-lg-10 col-12 pt-lg-3 mb-4 pl-lg-5 px-lg-0 px-4 portfolio-content">
   <p>学会如何用hexo写自己的博客（文章摘要）</p>
 <a id="more"></a>
 <p>在博客写文章</p>
-<p>一、用hexo发表新文章</p>
+<p>###一、用hexo发表新文章</p>
 <p><code>$ hexo n &quot;文章标题&quot;</code></p>
 <p>在Hexo右键gitbash here，执行该条命令后，会在项目\Hexo\source_posts中生成<code>文章标题.md</code>文件，用编辑器打开编写即可。<br>或者自己直接在\Hexo\source_posts中新建一个md文件。<br>编写时，语法格式遵循markdown  不用多了解，会用就行，具体参照<a href="https://sspai.com/post/25137" target="_blank" rel="noopener">https://sspai.com/post/25137</a></p>
 <p>写完后，觉得不错可以执行</p>
@@ -80,13 +96,16 @@
 <p><code>$ hexo g #生成文件</code><br><code>$hexo d #部署</code>  d是deploy的简写</p>
 <p>也可以将上面的命令合并为<br><code>hexo d -g</code>或 <code>hexo g -d</code></p>
 <p>执行完后，输入<a href="https://songguoguo927.github.io/" target="_blank" rel="noopener">https://songguoguo927.github.io/</a>  就可以看到了与本地相同的效果啦<br>这个是当时在搭建阶段时    将本地的Hexo文件更新到Github的库中 那一步中<br>我们自己部署在Github Pages服务器上的博客</p>
+<p>在测试了一下大概的发表博客的流程后，身为一个颜狗，接下来要做的就是弄个好看点的主题啦。</p>
+<p>自己在hexo官网主题找了一个，并按照相关操作弄好了，只不过弄出来的有点简陋与模板相比，所以我决定基于这个主题自己撸一个。</p>
+<p>看了那么多没啥头绪，决定自己制作一个主题，熟悉了一下主题里面各项文件的具体作用后，才开始修改。</p>
 <hr>
 
 </div>
 
 
-      </div>
-      
+                </div>
+            
   	</div>
 
     <!-- After footer scripts -->
