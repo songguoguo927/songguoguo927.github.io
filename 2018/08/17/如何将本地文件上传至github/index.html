@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+  <!-- Head tag -->
+  <head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  <!-- Title -->
+  
+  <title>如何将本地文件上传至github - Xjm&#39;s Blog</title>
+
+  <!--Favicon-->
+  <link rel="icon" href="favicon/favicon.ico">
+
+  <!--Description-->
+  
+      <meta name="description" content="The record came all the way">
+  
+
+  <!--Author-->
+  
+      <meta name="author" content="xjm">
+  
+
+  <!-- Pure CSS -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
+  <link href="https://fonts.googleapis.com/css?family=Crimson+Text|Open+Sans:300,800" rel="stylesheet">
+
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="/css/styles.css">
+
+  <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+  <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+    <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
+  <![endif]-->
+
+  <!-- Google Analytics -->
+  
+
+</head>
+
+
+  <body>
+  	<div class="container-fluid navbar-container m-sm-5">
+             <!-- Header -->
+             <nav class="navbar navbar-toggleable-sm navbar-light px-1 py-3 my-3 mb-sm-5">
+  <a class="navbar-brand ml-2" href="/">Xjm's Blog</a>
+  <button class="navbar-toggler navbar-toggler-right py-2" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse text-center" id="navbarCollapse">
+    <ul class="navbar-nav ml-auto my-auto">
+      
+        <li class="nav-item">
+          <a class="nav-link" href="/">Home</a>
+        </li>
+      
+        <li class="nav-item">
+          <a class="nav-link" href="/archives">Archives</a>
+        </li>
+      
+        <li class="nav-item">
+          <a class="nav-link" href="/contact">Contact</a>
+        </li>
+      
+        <li class="nav-item">
+          <a class="nav-link" href="https://github.com/songguoguo927">Github</a>
+        </li>
+      
+    </ul>
+    <hr class="hidden-md-up" />
+  </div>
+</nav>
+
+
+  		<div class="row">
+  			<div class="col-12 mb-4">
+  <img class="img-fluid project-img" src="/images/unsplash.jpg" alt="如何将本地文件上传至github">
+</div>
+<div class="col-lg-3 col-12 pt-3 px-4 pr-lg-5">
+  <h1>如何将本地文件上传至github</h1>
+</div>
+<div class="col-lg-8 col-12 pt-lg-3 mb-4 pl-lg-5 px-lg-0 px-4 portfolio-content">
+  <h4 id="git下载安装配置"><a href="#git下载安装配置" class="headerlink" title="git下载安装配置"></a>git下载安装配置</h4><p><strong>一，注册账号</strong> 在<a href="http://www.github.com" target="_blank" rel="noopener">http://www.github.com</a>注册</p>
+<hr>
+<p><strong>二，新建仓库</strong> 第一步完成后，在个人主页点击右上角个人头像，点击”profile”，进入界面后。点击”Repositories”进入，仓库界面，点击右方的”New”即可新建一个新仓库了。</p>
+<hr>
+<p><strong>三，下载git</strong> 地址：<a href="https://git-scm.com/downloads" target="_blank" rel="noopener">https://git-scm.com/downloads</a> 安装时默认安装即可。</p>
+<hr>
+<p><strong>四，git配置-SSH key配置</strong></p>
+<p>1.创建本地的ssh key。双击Git Bash，出现命令行界面。</p>
+<p>2.检查本机是否有ssh key设置,输入命令：<code>cd ~/.ssh</code> 或<code>cd .ssh</code>.</p>
+<p>3.如果没有则提示:<code>No such file or directory</code>进行第4步 ;如果有则进入~/.ssh路径下（跳过第4步，进行第5步） .</p>
+<p>4.使用Git Bash生成新的ssh key，输入 ·ssh -keygen -t rsa -C “<a href="mailto:XXXXXX@XXXX.com" target="_blank" rel="noopener">XXXXXX@XXXX.com</a>“。<br><em>然后把后面的邮箱替换成你的注册邮箱</em>。然后一路回车，采用默认路径和空密码。 接着会在默认路径下生成.ssh的文件夹。</p>
+<p>5.在.ssh文件夹中用编辑器打开id_rsa.pub复制里面的密钥。进入github，点击头像上的”Setting”，左侧有个SSH Keys，点击它，进入页面。点击右侧的”Add SSH key”，自己输入一个标题，然后把密钥赋值进去即可。测试一下是否成功，进入git bash，输入 ssh -T <a href="mailto:git@github.com" target="_blank" rel="noopener">git@github.com</a>。第一次会提示，是否continue，yes后就会看到：You’ve successfully authenticated, but GitHub does not provide shell access。这就说明成功了。</p>
+<p>6.设置用户名和邮箱<br><code>git config --global user.name &quot;your name&quot;</code><br><code>git config --global user.email &quot;your_email@youremail.com&quot;</code></p>
+<h4 id="将本地文件上传至github上"><a href="#将本地文件上传至github上" class="headerlink" title="将本地文件上传至github上"></a>将本地文件上传至github上</h4><blockquote>
+<p>前提：有github账号，且github上仓库已建好，本地git下载安装好，git配置好。</p>
+</blockquote>
+<p>情况一：直接将本地文件夹当成仓库（先有文件，后有仓库）</p>
+<p><strong>核心</strong>：将本地仓库与远程仓库关联（即使名字不一样）</p>
+<p>1.首先在你想上传什么文件的文件夹中右键，我这里以test目录为例&gt;Git Bash Here.</p>
+<p>2.输入命令<code>git init</code>对仓库进行初始化.</p>
+<p>3.给仓库添加远程地址（将本地项目test与github上的lunbotu项目进行关联），输入命令 <code>git remote add origin https://github.com/songguoguo927/lunbotu.git</code>.</p>
+<p>4.输入<code>git add .</code>选择要提交的文件，此处 . 表示所有文件，可以单独选择某个文件，自己去搜。</p>
+<p>5.输入<code>git commit -m &quot;提交描述&quot;</code>.</p>
+<p>6.最后输入<code>git push origin master</code>，会提示你输入用户名，输入后回车，提示输入密码，输入好后再回车，等待提交就可以。<br><em>最终结果就是：github的仓库lunbotu里有本地文件夹test里的文件</em></p>
+<p>情况二：将本地文件上传至github上建好的仓库（先有仓库，后有文件）</p>
+<p><strong>核心</strong>：使用<code>git clone</code>命令。<br><code>$ git clone https://github.com/songguoguo927/songguoguo927.github.io.git</code><br>比如，就是将我在github上建的仓库（名字：songguoguo927.github.io.git）clone到本地，我们可以将clone命令理解为高级点的复制，这个时候该项目（songguoguo927.github.io）本身就是一个git仓库了，不需要执行<code>git init</code>进行初始化，而且甚至都已经关联好了远程仓库，我们只需要在本地的songguoguo927.github.io目录下任意修改或者添加文件，然后进行commit，之后就可以执行：<code>git push origin master</code>进行代码提交。</p>
+
+</div>
+
+<div class="col-lg-1  col-12">
+<img src="..\source\favicon\gotop.ico" alt="back to top" class="go-top">
+</div>
+
+                </div>
+            
+  	</div>
+
+    <!-- After footer scripts -->
+    <script src="https://code.jquery.com/jquery-3.1.1.slim.min.js" integrity="sha384-A7FZj7v+d/sdmMqp/nOQwliLvUsJfDHW+k9Omg/a/EheAdgtzNs3hpfag6Ed950n" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js" integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js" integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn" crossorigin="anonymous"></script>
+
+  </body>
+</html>

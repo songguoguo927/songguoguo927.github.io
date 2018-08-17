@@ -8,7 +8,7 @@
 
   <!-- Title -->
   
-  <title>我爱学习 - Xjm&#39;s Blog</title>
+  <title>hexo主题换皮肤之旅 - Xjm&#39;s Blog</title>
 
   <!--Favicon-->
   <link rel="icon" href="favicon/favicon.ico">
@@ -34,6 +34,7 @@
   <!--[if lt IE 9]>
     <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
     <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
   <![endif]-->
 
   <!-- Google Analytics -->
@@ -77,32 +78,22 @@
 
   		<div class="row">
   			<div class="col-12 mb-4">
-  <img class="img-fluid project-img" src="/images/unsplash.jpg" alt="我爱学习">
+  <img class="img-fluid project-img" src="/images/unsplash.jpg" alt="hexo主题换皮肤之旅">
 </div>
-<div class="col-lg-1 col-12 pt-3 px-4 pr-lg-5">
-  <h1>我爱学习</h1>
+<div class="col-lg-3 col-12 pt-3 px-4 pr-lg-5">
+  <h1>hexo主题换皮肤之旅</h1>
 </div>
-<div class="col-lg-10 col-12 pt-lg-3 mb-4 pl-lg-5 px-lg-0 px-4 portfolio-content">
-  <p>学会如何用hexo写自己的博客（文章摘要）</p>
-<a id="more"></a>
-<p>在博客写文章</p>
-<p>###一、用hexo发表新文章</p>
-<p><code>$ hexo n &quot;文章标题&quot;</code></p>
-<p>在Hexo右键gitbash here，执行该条命令后，会在项目\Hexo\source_posts中生成<code>文章标题.md</code>文件，用编辑器打开编写即可。<br>或者自己直接在\Hexo\source_posts中新建一个md文件。<br>编写时，语法格式遵循markdown  不用多了解，会用就行，具体参照<a href="https://sspai.com/post/25137" target="_blank" rel="noopener">https://sspai.com/post/25137</a></p>
-<p>写完后，觉得不错可以执行</p>
-<p><code>$hexo clean #清除缓存文件</code>   为了避免不必要的错误，建议在生成静态文件前执行<br><code>$hexo generate #生成静态文件</code>   也可简写为<code>hexo g</code><br><code>$hexo server</code>       也可简写为<code>hexo s</code></p>
-<p>执行到这你就可以启动Hexo服务器在本地查看啦，在浏览器打开 <a href="http://localhost:4000/" target="_blank" rel="noopener">http://localhost:4000/</a> 即可查看文章效果了</p>
-<p>如果想部署到github上<br>执行下面命令</p>
-<p><code>$ hexo g #生成文件</code><br><code>$hexo d #部署</code>  d是deploy的简写</p>
-<p>也可以将上面的命令合并为<br><code>hexo d -g</code>或 <code>hexo g -d</code></p>
-<p>执行完后，输入<a href="https://songguoguo927.github.io/" target="_blank" rel="noopener">https://songguoguo927.github.io/</a>  就可以看到了与本地相同的效果啦<br>这个是当时在搭建阶段时    将本地的Hexo文件更新到Github的库中 那一步中<br>我们自己部署在Github Pages服务器上的博客</p>
-<p>在测试了一下大概的发表博客的流程后，身为一个颜狗，接下来要做的就是弄个好看点的主题啦。</p>
-<p>自己在hexo官网主题找了一个，并按照相关操作弄好了，只不过弄出来的有点简陋与模板相比，所以我决定基于这个主题自己撸一个。</p>
+<div class="col-lg-8 col-12 pt-lg-3 mb-4 pl-lg-5 px-lg-0 px-4 portfolio-content">
+  <p>首先自己在hexo官网主题找了一个hexo-theme-edinburgh主题，并按照相关操作弄好了，只不过弄出来的有点简陋（只有单张图片，而且无导航栏）与模板相比，所以我决定基于这个主题自己撸一个。</p>
 <p>看了那么多没啥头绪，决定自己制作一个主题，熟悉了一下主题里面各项文件的具体作用后，才开始修改。</p>
-<hr>
+<p>做了以下修改：<br>1，左上角的hexo改成xjm’s blog<br>2，加了导航栏<br>3，将点进去的文章页图片尺寸大小调了下<br>待做修改：<br>1，完善导航栏点击后的内容<br>2，增加个人相关介绍联系<br>3，给内部文章在左侧标题下方设置目录<br>4，首页每篇文章图片实现不一样的封面<br>5，实现点击归类栏后呈现不同技术栈归类下的文章目录<br>6，想在文章页面底部添加一个回到顶部的按钮<br>7，用***云存储图片，这样写文章就可以随意插入自己的图片啦</p>
+<p>参考文章：<br><a href="https://www.maintao.com/2014/hexo-theme-from-scratch/" target="_blank" rel="noopener">https://www.maintao.com/2014/hexo-theme-from-scratch/</a><br><a href="http://www.ahonn.me/2016/12/15/create-a-hexo-theme-from-scratch/" target="_blank" rel="noopener">http://www.ahonn.me/2016/12/15/create-a-hexo-theme-from-scratch/</a>  （影响最大）</p>
 
 </div>
 
+<div class="col-lg-1  col-12">
+<img src="..\source\favicon\gotop.ico" alt="back to top" class="go-top">
+</div>
 
                 </div>
             
