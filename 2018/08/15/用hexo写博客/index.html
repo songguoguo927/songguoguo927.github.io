@@ -64,7 +64,7 @@
         </li>
       
         <li class="nav-item">
-          <a class="nav-link" href="/contact">Contact</a>
+          <a class="nav-link" href="/about">About</a>
         </li>
       
         <li class="nav-item">
@@ -92,6 +92,7 @@
 <h4 id="二，本地查看博客效果"><a href="#二，本地查看博客效果" class="headerlink" title=" 二，本地查看博客效果"></a><strong> 二，本地查看博客效果</strong></h4><p>写完后，觉得不错可以依次执行以下命令：</p>
 <p><code>$hexo clean #清除缓存文件</code>           <em> 为了避免不必要的错误，建议在生成静态文件前执行 </em><br><code>$hexo generate #生成静态文件</code>     <em> 也可简写为<code>hexo g</code> </em><br><code>$hexo server</code>                                           <em> 也可简写为<code>hexo s</code> </em></p>
 <p>执行到这你就可以启动Hexo服务器在本地查看啦，在浏览器打开 <a href="http://localhost:4000/" target="_blank" rel="noopener">http://localhost:4000/</a> 即可查看文章效果了</p>
+<p>ps.每次<code>hexo s</code>后只要不停止，在本地修改文章保存，在localhost:4000网页刷新即可随时看到更新的文章，而不用每次修改每次生成和启动服务才能查看本地效果。</p>
 <hr>
 <h4 id="三，如果想将博客部署到github上"><a href="#三，如果想将博客部署到github上" class="headerlink" title=" 三，如果想将博客部署到github上 "></a><strong> 三，如果想将博客部署到github上 </strong></h4><p>执行下面命令：</p>
 <p><code>$ hexo g</code>                                   <em>  #生成文件 </em><br><code>$hexo d #部署</code>                       <em> d是deploy的简写 </em></p>
@@ -119,5 +120,6 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js" integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb" crossorigin="anonymous"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js" integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn" crossorigin="anonymous"></script>
 
+    <script src="/js/totop.js"></script>
   </body>
 </html>

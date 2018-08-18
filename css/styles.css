@@ -177,16 +177,43 @@ h1, h2, h3 {
 }
 
 .go-top {
+	display: none;
     color: #363636;
-    display: block;
+    
     position: fixed;
     bottom: 34px;
     border: 2px solid #363636;
     font-size: 29px;
     border-radius: 50%;
-    text-decoration: none;
+   
     width: 50px;
     height: 50px;
     text-align: center;
 }
+
+.archive {
+  margin: 1em auto;
+  padding: 30px 50px;
+  background-color: #fff;
+  border: 1px solid #ddd;
+  box-shadow: 0 0 2px #ddd;
+}
+  .post-archive {
+    list-style: none;
+    padding: 0;
+}
+    .post-item {
+      margin: 5px 0;
+}
+      .post-date {
+        display: inline-block;
+        margin-right: 10px;
+        color: #BABABA;
+      }
+
+      .post-title {
+        color: #368CCB;
+        text-decoration: none;
+      }
+ 
 

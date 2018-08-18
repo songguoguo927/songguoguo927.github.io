@@ -64,7 +64,7 @@
         </li>
       
         <li class="nav-item">
-          <a class="nav-link" href="/contact">Contact</a>
+          <a class="nav-link" href="/about">About</a>
         </li>
       
         <li class="nav-item">
@@ -87,8 +87,12 @@
 <div class="col-lg-8 col-12 pt-lg-3 mb-4 pl-lg-5 px-lg-0 px-4 portfolio-content">
   <p>首先自己在hexo官网主题找了一个hexo-theme-edinburgh主题，并按照相关操作弄好了，只不过弄出来的有点简陋（只有单张图片，而且无导航栏）与模板相比，所以我决定基于这个主题自己撸一个。</p>
 <p>看了那么多没啥头绪，决定自己制作一个主题，熟悉了一下主题里面各项文件的具体作用后，才开始修改。</p>
-<p>做了以下修改：<br>1，左上角的hexo改成xjm’s blog<br>2，加了导航栏<br>3，将点进去的文章页图片尺寸大小调了下<br>待做修改：<br>1，完善导航栏点击后的内容<br>2，增加个人相关介绍联系<br>3，给内部文章在左侧标题下方设置目录<br>4，首页每篇文章图片实现不一样的封面<br>5，实现点击归类栏后呈现不同技术栈归类下的文章目录<br>6，想在文章页面底部添加一个回到顶部的按钮<br>7，用***云存储图片，这样写文章就可以随意插入自己的图片啦</p>
+<p>做了以下修改：<br>1，左上角的hexo改成xjm’s blog<br>2，加了导航栏<br>3，将点进去的文章页图片尺寸大小调了下<br>待做修改：<br>1，完善导航栏点击后的内容<br>2，增加个人相关介绍联系<br>3，给内部文章在左侧标题下方设置目录<br>4，首页每篇文章图片实现不一样的封面<br>5，实现点击归类栏后呈现不同技术栈归类下的文章目录</p>
+<p>7，用***云存储图片，这样写文章就可以随意插入自己的图片啦</p>
+<p>日后待完善：<br>6，想在文章页面底部添加一个回到顶部的按钮</p>
+<p>暂时用了锚点链接，简单的HTML+css做了一下返回顶部，<br>为了显得人性化使用了js的scroll，show，hide方法，使最开始是隐藏的当下滚到一定高度再显现出来</p>
 <p>参考文章：<br><a href="https://www.maintao.com/2014/hexo-theme-from-scratch/" target="_blank" rel="noopener">https://www.maintao.com/2014/hexo-theme-from-scratch/</a><br><a href="http://www.ahonn.me/2016/12/15/create-a-hexo-theme-from-scratch/" target="_blank" rel="noopener">http://www.ahonn.me/2016/12/15/create-a-hexo-theme-from-scratch/</a>  （影响最大）</p>
+<p>现在有一个想法就是首页随便展示四篇文章（目前是展示写的博文，以后可以自定义文章），有可点下一页<br>全部文章在archive里，但这里文章也要有分页，此处是每六篇换下一页<br>（文章排列样式要修改一下）</p>
 
 </div>
 
@@ -107,5 +111,6 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js" integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb" crossorigin="anonymous"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js" integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn" crossorigin="anonymous"></script>
 
+    <script src="/js/totop.js"></script>
   </body>
 </html>
