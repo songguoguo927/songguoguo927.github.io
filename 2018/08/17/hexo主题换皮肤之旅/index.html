@@ -90,17 +90,16 @@
 <p>做了以下修改：<br>1，左上角的hexo改成xjm’s blog<br>2，加了导航栏<br>3，将点进去的文章页图片尺寸大小调了下<br>待做修改：<br>1，完善导航栏点击后的内容<br>2，增加个人相关介绍联系<br>3，给内部文章在左侧标题下方设置目录<br>4，首页每篇文章图片实现不一样的封面<br>5，实现点击归类栏后呈现不同技术栈归类下的文章目录</p>
 <p>7，用***云存储图片，这样写文章就可以随意插入自己的图片啦</p>
 <p>日后待完善：<br>6，想在文章页面底部添加一个回到顶部的按钮</p>
-<p>暂时用了锚点链接，简单的HTML+css做了一下返回顶部，<br>为了显得人性化使用了js的scroll，show，hide方法，使最开始是隐藏的当下滚到一定高度再显现出来</p>
+<p>暂时用了锚链接(简单快速没有兼容性问题)，简单的HTML+css做了一下返回顶部.<br>考虑到，用锚链接视觉上不够直观，用户体验不够好。</p>
+<p>所以改写，用<strong>原生javascript实现回到顶部的按钮</strong>。<br>主要运用知识点：<br><strong>1，DOM操作</strong><br>     1),document.getElementById            根据ID获取元素标签<br>     2),document.Element.scrollTop         滚动条的数值，可读写<br><strong>2，事件运用</strong><br>     1),window.onload        页面加载完毕后触发<br>     2),onclick                         点击后触发<br>     3),window.onscroll       滚动滚动条时触发<br><strong>3，定时器</strong><br>      1),setInterval()        设置定时器，需传2个参数<br>      2),clearInterval()     关闭定时器，需传1个参数                    </p>
+<p>日后用jquery再重写一下原生js<br>为了显得人性化使用了js的scroll，show，hide方法，使最开始是隐藏的当下滚到一定高度再显现出来。</p>
 <p>参考文章：<br><a href="https://www.maintao.com/2014/hexo-theme-from-scratch/" target="_blank" rel="noopener">https://www.maintao.com/2014/hexo-theme-from-scratch/</a><br><a href="http://www.ahonn.me/2016/12/15/create-a-hexo-theme-from-scratch/" target="_blank" rel="noopener">http://www.ahonn.me/2016/12/15/create-a-hexo-theme-from-scratch/</a>  （影响最大）</p>
 <p>现在有一个想法就是首页随便展示四篇文章（目前是展示写的博文，以后可以自定义文章），有可点下一页<br>全部文章在archive里，但这里文章也要有分页，此处是每六篇换下一页<br>（文章排列样式要修改一下）</p>
 
 </div>
+<a href="javascript:;"  id="btn" title="back-to-top"  style="text-decoration: none;">Top</a>
 
-<div class="col-lg-1  col-12">
 
-<a href="#top"  class="go-top" style="text-decoration: none;">Top</a>
-
-</div>
 
                 </div>
             
