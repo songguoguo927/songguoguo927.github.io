@@ -86,29 +86,44 @@
 </div>
 <div class="col-lg-8 col-12 pt-lg-3 mb-4 pl-lg-5 px-lg-0 px-4 portfolio-content">
   <p>本身电脑系统为windows64位<br>前提：</p>
-<p>####<strong>一，装好L</strong><br>L:Linux</p>
+<h4 id="一，装好L"><a href="#一，装好L" class="headerlink" title="一，装好L"></a><strong>一，装好L</strong></h4><p>L:Linux</p>
 <ol>
-<li>在电脑上下载了VMware Ubuntu64位镜像 搭建虚拟机上的linux系统</li>
+<li>在电脑上下载了VMware Ubuntu64位镜像 搭建虚拟机上的linux系统<pre><code>首先将系统本身自带的配置文件/etc/apt/sources.list 进行修改。文件/etc/apt/sources.list是一个普通可编辑的文本文件，保存了ubuntu软件更新的源服务器的地址。把
+dep那一行的archive.ubuntu.com和security那个都改成mirrors.ailiyun.com
+</code></pre>   【1】更新所有包<pre><code>`sudo apt update &amp;&amp; sudo apt upgrade`
+</code></pre>   【2】安装好所需软件包<br>   语法：<code>sudo apt install [安装的名字]</code><br>   安装的名字可为多个，空格隔开<h4 id="二，装好AMP"><a href="#二，装好AMP" class="headerlink" title="二，装好AMP"></a>二<strong>，装好AMP</strong></h4><pre><code> A:apache2
+M:Mariadb
+P:php
+</code></pre>控制台输入：<code>sudo apt install apache2 mariadb-server php php-mysql libapache2-mod-php php-xml</code></li>
 </ol>
-<p>首先将系统本身自带的配置文件/etc/apt/sources.list 进行修改。文件/etc/apt/sources.list是一个普通可编辑的文本文件，保存了ubuntu软件更新的源服务器的地址。把<br>dep那一行的<br>archive.ubuntu.com和security那个都改成mirrors.ailiyun.com<br>【1】更新所有包<br><code>sudo apt update &amp;&amp; sudo apt upgrade</code><br>【2】安装好所需软件包<br>语法：<code>sudo apt install [安装的名字]</code><br>安装的名字可为多个，空格隔开</p>
-<p>####二<strong>，装好AMP</strong><br>A:apache2<br>M:Mariadb<br>P:php<br>控制台输入：<code>sudo apt install apache2 mariadb-server php php-mysql libapache2-mod-php php-xml</code></p>
-<p>####*<em>三，逐个进行测试是否安装成功</em><br>（1）测试apache安装是否成功<br>在虚拟机的Linux系统自带的firefork（火狐）浏览器中输入<br>127.0.0.1(或者localhost)<br>出现以下界面则apache安装成功</p>
-<p>（2）测试mysql安装是否成功<br><code>sudo my_secure_installation</code><br>(输到sec记得使用tap键，多多使用防出错）<br>按照他的操作后<br>出现Thanks for using MariaDB！<br>下一步<br><code>sudo -i</code><br><code>mysql -u root -p</code><br>出现MariaDB[(none)]&gt;<br>则表明安装成功<br>（3）测试php安装是否成功（测试Apache能否解析PHP）<br>接着上面<br><em>先<br>exit
-</em>再输入<br>~# cd /var/www/html<br>进入工作目录/var/www/html<br><em>~# ls<br>查看一下该目录里有啥（可不看）
-</em>在这目录下创建一个文件test.php<br>可用vim or nano，我这里用nano，当然你可以用vim（用法具体自行百度）</p>
-<p>#nano test.php<br>(该语法的含义表示用nano创建一个文件，如果目录下本身没有该文件，则创建一个空白的，有则打开已有的）<br>在nano编译环境中输入如下内容<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">&lt;?php</span><br><span class="line">phpinfo();</span><br><span class="line">?&gt;</span><br></pre></td></tr></table></figure></p>
-<p>保存退出<br>再在浏览器输入127.0.0.1/test.php<br>出现如下图所示则表明安装成功</p>
-<p>####<strong>四，discuz的下载与安装</strong><br>官网：<a href="http://www.discuz.net" target="_blank" rel="noopener">www.discuz.net</a><br>(我去官网没找到，然后百度搜索了一下，发现在码云（gitee）上有，将该项目的zip下载到本地（自动会下载到我们虚拟机上的下载目录里。下的为3.4正式版）<br>接着上面exit退出root</p>
-<p><em>进入工作目录 下载<br>cd 下载<br>ls<br>（看到一个叫ComsenzDiscuz-DiscuzX-master.zip的压缩包）<br>我们要解压它<br><code>unzip ComsenzDiscuz-DiscuzX-master.zip</code><br>(注意此处的tap键使用）<br>再ls一下看看解压后下载目录下多了的文件夹（我的为DiscuzX）
-</em>进入DiscuzX目录<br><code>cd DiscuzX</code><br>(注意此处的tap键使用）<br><code>ls</code><br>（我们可以看到有一个叫upload的文件夹）<br>（我们的目的是要将该文件上传到服务器，所以我们要先打包再上传）<br><code>tar czfv DiscuzX.tar.gz upload</code><br>(注意此处的tap键使用or自己取一个名字替换DiscuzX.tar.gz）<br>（接下来要将刚刚打包好的压缩包复制到/var/www/html文件夹下）<br><code>cp DiscuzX.tar.gz /var/www/html</code><br>(注意此处的tap键使用）<br>（若权限不够则加上sudo再输一遍）<br>*再进入/var/www/html目录<br><code>cd /var/www/html</code><br>解压 DiscuzX.tar.gz（还原tar包）变成upload<br><code>tar -xzvf DiscuzX.tar.gz</code><br>（若权限不够则加上sudo再输一遍）<br><code>ls</code><br>查看一下<br>降upload文件夹改名字<br><code>sudo mv upload/ forum/</code></p>
-<p>####<strong>五，数据库MariaDB设置</strong><br>主要是三个内容<br>[1]创建一个用户<br>[2]创建一个数据库<br>[3]将这个数据库的权限全都赋给这个用户<br>接着就是重新登录数据库<br><code>sudo -i</code><br><code>mysql -u root -p</code><br>开始做[1][2][3]<br>（注意，所有在MariaDB[(none)]&gt;之后输入的命令记得加分号（英文）结束）<br>*<code>create user &#39;xjm&#39;@localhost&#39; identified by &#39;123456&#39;;</code><br>检测用户是否创建成功输入<br><code>select user,host from mysql.user;</code><br>展示出如下图则成功</p>
-<p>*<code>create database discuz;</code><br>检测数据库是否创建成功输入<br><code>show databases;</code><br>展示出如下图则成功</p>
-<p><em>`grant all privileges on discuz.</em> to ‘xjm‘@localhost’;<code>再刷新一下权限表</code>flush privileges;<code></code>exit<code>（退出数据库）</code>exit`(退出root）</p>
+<h4 id="三，逐个进行测试是否安装成功"><a href="#三，逐个进行测试是否安装成功" class="headerlink" title="三，逐个进行测试是否安装成功"></a><strong>三，逐个进行测试是否安装成功</strong></h4><p>（1）测试apache安装是否成功<br>在虚拟机的Linux系统自带的firefork（火狐）浏览器中输入<br>127.0.0.1(或者localhost)<br>出现以下界面则apache安装成功</p>
+<p>（2）测试mysql安装是否成功<br><code>sudo my_secure_installation</code><br>(输到sec记得使用tap键，多多使用防出错）<br>按照他的操作后<br>出现Thanks for using MariaDB！<br>下一步<br><code>sudo -i</code><br><code>mysql -u root -p</code><br>出现MariaDB[(none)]&gt;<br>则表明安装成功<br>（3）测试php安装是否成功（测试Apache能否解析PHP）<br>接着上面</p>
+<blockquote>
+<p>先<br><code>exit</code><br>再输入<br>~# cd /var/www/html<br>进入工作目录/var/www/html<br>~#<code>ls</code><br>查看一下该目录里有啥（可不看）<br>在这目录下创建一个文件test.php<br>可用vim or nano，我这里用nano，当然你可以用vim（用法具体自行百度）</p>
+</blockquote>
+<p>#<code>nano test.php</code><br>(该语法的含义表示用nano创建一个文件，如果目录下本身没有该文件，则创建一个空白的，有则打开已有的）<br>在nano编译环境中输入如下内容<br><code>&lt;?php
+phpinfo();
+?&gt;</code><br>保存退出<br>再在浏览器输入127.0.0.1/test.php<br>出现如下图所示则表明安装成功</p>
+<h4 id="四，discuz的下载与安装"><a href="#四，discuz的下载与安装" class="headerlink" title="四，discuz的下载与安装"></a><strong>四，discuz的下载与安装</strong></h4><p>官网：<a href="http://www.discuz.net" target="_blank" rel="noopener">www.discuz.net</a><br>(我去官网没找到，然后百度搜索了一下，发现在码云（gitee）上有，将该项目的zip下载到本地（自动会下载到我们虚拟机上的下载目录里。下的为3.4正式版）<br>接着上面exit退出root</p>
+<blockquote>
+<p>进入工作目录 下载<br>cd 下载<br>ls<br>（看到一个叫ComsenzDiscuz-DiscuzX-master.zip的压缩包）<br>我们要解压它<br><code>unzip ComsenzDiscuz-DiscuzX-master.zip</code><br>(注意此处的tap键使用）<br>再ls一下看看解压后下载目录下多了的文件夹（我的为DiscuzX）<br>进入DiscuzX目录<br><code>cd DiscuzX</code><br>(注意此处的tap键使用）<br><code>ls</code><br>（我们可以看到有一个叫upload的文件夹）<br>（我们的目的是要将该文件上传到服务器，所以我们要先打包再上传）<br><code>tar czfv DiscuzX.tar.gz upload</code><br>(注意此处的tap键使用or自己取一个名字替换DiscuzX.tar.gz）<br>（接下来要将刚刚打包好的压缩包复制到/var/www/html文件夹下）<br><code>cp DiscuzX.tar.gz /var/www/html</code><br>(注意此处的tap键使用）<br>（若权限不够则加上sudo再输一遍）<br>*再进入/var/www/html目录<br><code>cd /var/www/html</code><br>解压 DiscuzX.tar.gz（还原tar包）变成upload<br><code>tar -xzvf DiscuzX.tar.gz</code><br>（若权限不够则加上sudo再输一遍）<br><code>ls</code><br>查看一下<br>降upload文件夹改名字<br><code>sudo mv upload/ forum/</code></p>
+</blockquote>
+<p>####<strong>五，数据库MariaDB设置</strong><br>主要是三个内容<br>[1]创建一个用户<br>[2]创建一个数据库<br>[3]将这个数据库的权限全都赋给这个用户<br>接着就是重新登录数据库<br><code>sudo -i</code><br><code>mysql -u root -p</code><br>开始做[1][2][3]<br>（注意，所有在MariaDB[(none)]&gt;之后输入的命令记得加分号（英文）结束）</p>
+<blockquote>
+<p><code>create user &#39;xjm&#39;@&#39;localhost&#39; identified by &#39;123456&#39;;</code><br>检测用户是否创建成功输入<br><code>select user,host from mysql.user;</code><br>展示出如下图则成功</p>
+</blockquote>
+<blockquote>
+<p><code>create database discuz;</code><br>检测数据库是否创建成功输入<br><code>show databases;</code><br>展示出如下图则成功</p>
+</blockquote>
+<blockquote>
+<p><code>grant all privileges on discuz.* to &#39;xjm&#39;@&#39;localhost&#39;;</code><br>再刷新一下权限表<br><code>flush privileges;</code><br><code>exit</code>（退出数据库）<br><code>exit</code>(退出root）</p>
+</blockquote>
 <p>检测授权是否创建成功输入（接着刚退出后的环境）<br><code>mysql -u xjm -p</code><br>-u=username -p=passwd<br>再按照要求enter password 输入123456<br>能登陆成功出现MariaDB[(none)]&gt;<br>则即可。<br>exit</p>
-<p>####<strong>六，去浏览器完成discuz的安装</strong><br><em>浏览器输入：127.0.0.1/forum<br>出现discuz的安装向导<br>（linux的根目录（/），用户的主目录（~），下载文件夹位于用户的主目录下）
-</em>一步步地来<br>将所有红叉改成绿勾<br>涉及到更改权限<br>直接从第三个config改（因为这里改了3，1,2也OK了）<br>输入：<code>sudo chmod a+w config/</code><br>其余同。<br>改完权限后进行到下一步<br>*安装数据库<br>填写数据库信息：<br>从ultrax开始，把它改成<br>数据库名：discuz<br>数据库用户名：xjm<br>数据库密码：123456<br>邮件可用真实。<br>填写管理员信息：<br>xjm<br>123456<br>完成后下一步。</p>
-<p>####<strong>七，完成测试</strong><br>用管理员身份登进去，去到管理中心会有一个提示<br>Please delete install/index.php via FTP<br>这个时候我们去到/var/www/html/forum/install目录下<br><code>sudo rm index.php</code><br>回到浏览器刷新即可。<br>后续完成一个普通用户注册登录，发帖（发两个，一张无图片，一张有图片）成功。则大功告成！<br>（删文件夹 rm -rf froum/）</p>
-<p>####<strong>八，后续如果自己登，浏览器直接输入</strong><br> localhost/forum<br>或127.0.0.1/forum即可打开论坛页面。<br>可以自己完善，将他挂到其他服务器上并可以通过域名访问。进行页面美化等工作。</p>
+<h4 id="六，去浏览器完成discuz的安装"><a href="#六，去浏览器完成discuz的安装" class="headerlink" title="六，去浏览器完成discuz的安装"></a><strong>六，去浏览器完成discuz的安装</strong></h4><blockquote>
+<p>浏览器输入：127.0.0.1/forum<br>出现discuz的安装向导<br>（linux的根目录（/），用户的主目录（~），下载文件夹位于用户的主目录下）<br>一步步地来<br>将所有红叉改成绿勾<br>涉及到更改权限<br>直接从第三个config改（因为这里改了3，1,2也OK了）<br>输入：<code>sudo chmod a+w config/</code><br>其余同。<br>改完权限后进行到下一步<br>安装数据库<br>填写数据库信息：<br>从ultrax开始，把它改成<br>数据库名：discuz<br>数据库用户名：xjm<br>数据库密码：123456<br>邮件可用真实。<br>填写管理员信息：<br>xjm<br>123456<br>完成后下一步。</p>
+</blockquote>
+<h4 id="七，完成测试"><a href="#七，完成测试" class="headerlink" title="七，完成测试"></a><strong>七，完成测试</strong></h4><p>用管理员身份登进去，去到管理中心会有一个提示<br>Please delete install/index.php via FTP<br>这个时候我们去到/var/www/html/forum/install目录下<br><code>sudo rm index.php</code><br>回到浏览器刷新即可。<br>后续完成一个普通用户注册登录，发帖（发两个，一张无图片，一张有图片）成功。则大功告成！<br>（删文件夹 rm -rf froum/）</p>
+<h4 id="八，后续如果自己登，浏览器直接输入"><a href="#八，后续如果自己登，浏览器直接输入" class="headerlink" title="八，后续如果自己登，浏览器直接输入"></a><strong>八，后续如果自己登，浏览器直接输入</strong></h4><p> localhost/forum<br>或127.0.0.1/forum即可打开论坛页面。<br>可以自己完善，将他挂到其他服务器上并可以通过域名访问。进行页面美化等工作。</p>
 
 </div>
 <a href="javascript:;"  id="btn" title="back-to-top"  style="text-decoration: none;">Top</a>
