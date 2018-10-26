@@ -88,9 +88,7 @@
   <p>本身电脑系统为windows64位<br>前提：</p>
 <h4 id="一，装好L"><a href="#一，装好L" class="headerlink" title="一，装好L"></a><strong>一，装好L</strong></h4><p>L:Linux</p>
 <ol>
-<li>在电脑上下载了VMware Ubuntu64位镜像 搭建虚拟机上的linux系统<pre><code>首先将系统本身自带的配置文件/etc/apt/sources.list 进行修改。文件/etc/apt/sources.list是一个普通可编辑的文本文件，保存了ubuntu软件更新的源服务器的地址。把
-dep那一行的archive.ubuntu.com和security那个都改成mirrors.ailiyun.com
-</code></pre>   【1】更新所有包<pre><code>`sudo apt update &amp;&amp; sudo apt upgrade`
+<li>在电脑上下载了VMware Ubuntu64位镜像 搭建虚拟机上的linux系统.首先将系统本身自带的配置文件/etc/apt/sources.list 进行修改。文件/etc/apt/sources.list是一个普通可编辑的文本文件，保存了ubuntu软件更新的源服务器的地址。把dep那一行的archive.ubuntu.com和security那个都改成mirrors.ailiyun.com<br>   【1】更新所有包<pre><code>`sudo apt update &amp;&amp; sudo apt upgrade`
 </code></pre>   【2】安装好所需软件包<br>   语法：<code>sudo apt install [安装的名字]</code><br>   安装的名字可为多个，空格隔开<h4 id="二，装好AMP"><a href="#二，装好AMP" class="headerlink" title="二，装好AMP"></a>二<strong>，装好AMP</strong></h4><pre><code> A:apache2
 M:Mariadb
 P:php
