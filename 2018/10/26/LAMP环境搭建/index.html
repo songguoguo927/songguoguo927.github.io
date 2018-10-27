@@ -87,8 +87,9 @@
 <div class="col-lg-8 col-12 pt-lg-3 mb-4 pl-lg-5 px-lg-0 px-4 portfolio-content">
   <p>本身电脑系统为windows64位<br>前提：</p>
 <h4 id="一-装好L"><a href="#一-装好L" class="headerlink" title="一,装好L"></a><strong>一,装好L</strong></h4><ol>
-<li>(L:Linux)在电脑上下载了VMware Ubuntu64位镜像 搭建虚拟机上的linux系统.首先将系统本身自带的配置文件/etc/apt/sources.list 进行修改。文件/etc/apt/sources.list是一个普通可编辑的文本文件，保存了ubuntu软件更新的源服务器的地址。把dep那一行的archive.ubuntu.com和security那个都改成mirrors.ailiyun.com<br>【1】更新所有包<br><code>sudo apt update &amp;&amp; sudo apt upgrade</code><br>【2】安装好所需软件包<br>语法：<code>sudo apt install [安装的名字]</code><br>安装的名字可为多个，空格隔开<h4 id="二-装好AMP"><a href="#二-装好AMP" class="headerlink" title="二,装好AMP"></a><strong>二,装好AMP</strong></h4>A:apache2<br>M:Mariadb<br>P:php<br>控制台输入：<code>sudo apt install apache2 mariadb-server php php-mysql libapache2-mod-php php-xml</code></li>
+<li>(L:Linux)在电脑上下载了VMware Ubuntu64位镜像 搭建虚拟机上的linux系统.首先将系统本身自带的配置文件/etc/apt/sources.list 进行修改。文件/etc/apt/sources.list是一个普通可编辑的文本文件，保存了ubuntu软件更新的源服务器的地址。把dep那一行的archive.ubuntu.com和security那个都改成mirrors.ailiyun.com<br>【1】更新所有包<br><code>sudo apt update &amp;&amp; sudo apt upgrade</code><br>【2】安装好所需软件包<br>语法：<code>sudo apt install [安装的名字]</code><br>安装的名字可为多个，空格隔开</li>
 </ol>
+<h4 id="二-装好AMP"><a href="#二-装好AMP" class="headerlink" title="二,装好AMP"></a><strong>二,装好AMP</strong></h4><p> A:apache2<br> M:Mariadb<br> P:php<br>控制台输入：<code>sudo apt install apache2 mariadb-server php php-mysql libapache2-mod-php php-xml</code></p>
 <h4 id="三-逐个进行测试是否安装成功"><a href="#三-逐个进行测试是否安装成功" class="headerlink" title="三,逐个进行测试是否安装成功"></a><strong>三,逐个进行测试是否安装成功</strong></h4><p>（1）测试apache安装是否成功<br>在虚拟机的Linux系统自带的firefox（火狐）浏览器中输入<br>127.0.0.1(或者localhost)<br>出现以下界面则apache安装成功</p>
 <p>（2）测试mysql安装是否成功<br><code>sudo myql_secure_installation</code><br>(输到sec记得使用tab键，多多使用防出错）<br>按照他的操作后<br>出现Thanks for using MariaDB！<br>下一步<br><code>sudo -i</code><br><code>mysql -u root -p</code><br>出现MariaDB[(none)]&gt;<br>则表明安装成功<br>（3）测试php安装是否成功（测试Apache能否解析PHP）<br>接着上面</p>
 <blockquote>
