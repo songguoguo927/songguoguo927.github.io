@@ -170,7 +170,7 @@ h1, h2, h3 {
 }
 .page-nav a,span {
 	font-size: 1.3rem;
-	font-family: 'Crimson Text', sans-serif;
+	font-family: 'Open Sans', sans-serif;
 	font-weight: 300;
 	margin: 0 10px;
 	color: #000;
@@ -197,22 +197,27 @@ h1, h2, h3 {
   border: 1px solid #ddd;
   box-shadow: 0 0 2px #ddd;
 }
-  .post-archive {
+.post-archive {
     list-style: none;
     padding: 0;
 }
-    .post-item {
+.post-item {
       margin: 5px 0;
 }
-      .post-date {
+.post-date {
         display: inline-block;
         margin-right: 10px;
         color: #BABABA;
       }
-
-      .post-title {
-        color: #368CCB;
-        text-decoration: none;
+.post-title {
+    color: black;
+     font-size: 1.3em;
       }
+			.post-item a{
+				text-decoration: none;
+			}
  
-
+#disqus_thread{
+	width: 80%;
+  margin: 0 auto;
+}

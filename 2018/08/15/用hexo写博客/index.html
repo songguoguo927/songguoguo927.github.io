@@ -26,7 +26,7 @@
 
   <!-- Pure CSS -->
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
-  <link href="https://fonts.googleapis.com/css?family=Crimson+Text|Open+Sans:300,800" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
 
   <!-- Custom CSS -->
   <link rel="stylesheet" href="/css/styles.css">
@@ -40,6 +40,25 @@
 
   <!-- Google Analytics -->
   
+    <script>
+        (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+                    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+                m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+        })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+        ga('create', 'UA-129363305-1', 'auto');
+        ga('send', 'pageview');
+    </script>
+
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-129363305-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-129363305-1');
+</script>
 
 </head>
 
@@ -108,23 +127,21 @@
 <p>执行完后，这样我们自己的博客在Github Pages服务器上就部署好了，浏览器输入<a href="https://songguoguo927.github.io/" target="_blank" rel="noopener">https://songguoguo927.github.io/</a>  （这是我当时设置好的我的，你应该用你自己的）就可以看到了与本地相同的效果啦<br>这个是当时在搭建阶段时    将本地的Hexo文件更新到Github的库中 那一步中相关联的。</p>
 <hr>
 <p>在测试了一下大概的发表博客的流程后，身为一个颜狗，接下来要做的就是弄个好看点的主题啦。</p>
-<p>预知后事如何，且听下回分解！</p>
+<p>预知后事如何，请持续关注！</p>
 <hr>
+<p>ps.运行<code>hexo s</code>命令行后，本地直接修改文件保存，浏览器中直接刷新即可，不用再次<code>hexo g</code></p>
 
 </div>
 <a href="javascript:;" id="btn" title="back-to-top" style="text-decoration: none;">Top</a>
 
 
 
-                </div>
+            </div>
             
   	</div>
 
     <!-- After footer scripts -->
-    <script src="https://code.jquery.com/jquery-3.1.1.slim.min.js" integrity="sha384-A7FZj7v+d/sdmMqp/nOQwliLvUsJfDHW+k9Omg/a/EheAdgtzNs3hpfag6Ed950n" crossorigin="anonymous"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js" integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb" crossorigin="anonymous"></script>
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js" integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn" crossorigin="anonymous"></script>
-
+    
     <div id="disqus_thread"></div>
 <script>
 
@@ -146,6 +163,6 @@ s.setAttribute('data-timestamp', +new Date());
 </script>
 <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
                             
-    <script src="/js/totop.js"></script>
-  </body>
+<script src="/js/totop.js"></script>
+</body>
 </html>
