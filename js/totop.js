@@ -1,15 +1,3 @@
-/*$(function() {
-    $(window).scroll(function() {
-        if ($(window).scrollTop() > 400)
-            $("#btn").show();
-        else
-            $("#btn").hide();
-    });
-   $("#btn").click(function() {
-        $("html, body").animate({scrollTop: "0px"}, 1000);
-    });
-});*/
-
 //原生js实现回到顶部
 //页面加载完毕后触发
 window.onload = function(){
