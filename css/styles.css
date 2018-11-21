@@ -218,6 +218,15 @@ h1, h2, h3 {
 			}
  
 #disqus_thread{
-	width: 64%;
+	width: 80%;
   margin: 300px auto;
 }
+.btn{
+     margin: 0 auto;
+}
+.history{
+	display: none;
+}
+.btn:hover ~ .history{
+            display: block;
+        }
