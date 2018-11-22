@@ -230,3 +230,20 @@ h1, h2, h3 {
 .btn:hover ~ .history{
             display: block;
         }
+				.history-egg{
+					margin-bottom: 20px;
+				}
+.history-eggT:hover{
+
+	border: none;
+       
+}
+/*.navbar-toggler:hover ~ #navbarCollapse{
+display: block;
+}*/
+#menu-checkbox{
+	display: none;
+}
+#menu-checkbox:checked ~ #navbarCollapse{
+    display: block;
+}
