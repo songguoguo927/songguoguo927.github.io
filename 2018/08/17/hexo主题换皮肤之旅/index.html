@@ -93,10 +93,6 @@
           <a class="nav-link" href="http://xiajiameng.fun/myfun">Mood</a>
         </li>
       
-        <li class="nav-item">
-          <a class="nav-link" href="https://github.com/songguoguo927">Github</a>
-        </li>
-      
     </ul>
     <hr class="hidden-md-up">
   </div>
@@ -109,6 +105,8 @@
 </div>
 <div class="col-lg-3 col-12 pt-3 px-4 pr-lg-5">
   <h1>hexo-theme-edinburgh优化持续更</h1>
+  <!--添加生成目录的容器-->
+  <div id="wrap"></div>
 </div>
 <div class="col-lg-8 col-12 pt-lg-3 mb-4 pl-lg-5 px-lg-0 px-4 portfolio-content">
   <p>首先自己在hexo官网主题找了一个hexo-theme-edinburgh主题，并按照相关操作弄好了，只不过弄出来的有点简陋（只有单张图片，而且无导航栏）与模板相比，所以我决定基于这个主题自己撸一个。</p>
@@ -136,8 +134,10 @@
     <!-- After footer scripts -->
     <footer class="footer">
 <div class="history-egg text-center">
+      
     <button class="btn history-eggT">history 彩蛋</button>
-     <div class="container">《My All》-滨崎步</div>
+    <div class="history container text-center">《意难平》-霜竭</div>
+     <div class="history container text-center">《My All》-滨崎步</div>
      <div class="history container text-center">《所爱》-曾雪雅</div> 
     <div class="history container text-center">《曾经也想过一了百了》-中岛美嘉</div>
      <div class="history container text-center">《小跳蛙》</div>
@@ -152,9 +152,12 @@
     .
   duang
 </pre>
-   <div class="container">今日推荐歌曲《意难平》-霜竭</div> 
+   <div class="container">今日推荐影片《她》-咦！我也想有一个那样的操作系统</div> 
 </div>
+<div class="contactUs">
 
+<a href="https://github.com/songguoguo927">Github</a>
+</div>
 </footer>
     
 <script>
@@ -176,8 +179,17 @@ s.setAttribute('data-timestamp', +new Date());
 })();
 </script>
 <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
-                            
+<script src="https://cdn.jsdelivr.net/npm/auto-toc-js@1.0.0/dist/toc.min.js"></script>                          
+<script>
+    new Toc({
+        wrapperId: 'wrap',
+        insertId: 'wrap',
+        showSerial: true
+    }).createToc();
+</script>
 <script src="/js/totop.js"></script>
+
+
 <script id="dsq-count-scr" src="//https-xiajm-me.disqus.com/count.js" async></script>
 </body>
 </html>

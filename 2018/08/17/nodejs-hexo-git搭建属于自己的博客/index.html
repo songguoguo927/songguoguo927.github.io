@@ -93,10 +93,6 @@
           <a class="nav-link" href="http://xiajiameng.fun/myfun">Mood</a>
         </li>
       
-        <li class="nav-item">
-          <a class="nav-link" href="https://github.com/songguoguo927">Github</a>
-        </li>
-      
     </ul>
     <hr class="hidden-md-up">
   </div>
@@ -109,6 +105,8 @@
 </div>
 <div class="col-lg-3 col-12 pt-3 px-4 pr-lg-5">
   <h1>nodejs+hexo+git搭建属于自己的博客</h1>
+  <!--添加生成目录的容器-->
+  <div id="wrap"></div>
 </div>
 <div class="col-lg-8 col-12 pt-lg-3 mb-4 pl-lg-5 px-lg-0 px-4 portfolio-content">
   <p>大一下的时候，学长学姐就开始建议我们搭博客，但当时自己真的太渣，尝试搭过，但一路上总是那么多坎坎坷坷，电脑不是这有问题就是那有问题，加上遇到困难就畏缩害怕，问了学长学姐后，自己还是没有搭起来，便放弃了。还理所当然觉得还为之过早，现在觉得那种想法可以理解但还是不太正确。<br>也并不是说现在有多厉害，而是随着经历的多了，慢慢的学会不退缩，学会能独立解决就解决，不害怕困难，能平下心来吧。<br>前几天在掘金上看了一篇文章《2018，你该搭建自己的博客了！》看的蛮有感触的，所以决定重拾起当时放下的任务，其实在此之前的一段时间，搭博客这件事在我心里就是一件不敢面对的事，虽然大家都说简单，但我脑中已给他定下难这个印象了。所以一直没有去实现。<br>看了这篇文章后我花了一个下午搭好了，并没有像文章中那样顺顺利利，也遇到过几个问题，但都通过自己谷歌解决了。<br>说实话，真的很开心，就像拔掉了心中的刺。</p>
@@ -156,8 +154,10 @@
     <!-- After footer scripts -->
     <footer class="footer">
 <div class="history-egg text-center">
+      
     <button class="btn history-eggT">history 彩蛋</button>
-     <div class="container">《My All》-滨崎步</div>
+    <div class="history container text-center">《意难平》-霜竭</div>
+     <div class="history container text-center">《My All》-滨崎步</div>
      <div class="history container text-center">《所爱》-曾雪雅</div> 
     <div class="history container text-center">《曾经也想过一了百了》-中岛美嘉</div>
      <div class="history container text-center">《小跳蛙》</div>
@@ -172,9 +172,12 @@
     .
   duang
 </pre>
-   <div class="container">今日推荐歌曲《意难平》-霜竭</div> 
+   <div class="container">今日推荐影片《她》-咦！我也想有一个那样的操作系统</div> 
 </div>
+<div class="contactUs">
 
+<a href="https://github.com/songguoguo927">Github</a>
+</div>
 </footer>
     
 <script>
@@ -196,8 +199,17 @@ s.setAttribute('data-timestamp', +new Date());
 })();
 </script>
 <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
-                            
+<script src="https://cdn.jsdelivr.net/npm/auto-toc-js@1.0.0/dist/toc.min.js"></script>                          
+<script>
+    new Toc({
+        wrapperId: 'wrap',
+        insertId: 'wrap',
+        showSerial: true
+    }).createToc();
+</script>
 <script src="/js/totop.js"></script>
+
+
 <script id="dsq-count-scr" src="//https-xiajm-me.disqus.com/count.js" async></script>
 </body>
 </html>

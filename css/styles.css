@@ -87,7 +87,7 @@ h1, h2, h3 {
 }
 .row{
 	margin: 0 auto;
-	width: 80%;
+	width: 90%;
 }
 .portfolio-img {
 	width: 100%;
@@ -220,6 +220,7 @@ h1, h2, h3 {
 #disqus_thread{
 	width: 80%;
   margin: 300px auto;
+	margin-bottom: 20px;
 }
 .btn{
      margin: 0 auto;
