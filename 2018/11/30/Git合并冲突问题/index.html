@@ -27,7 +27,7 @@
   <!-- Pure CSS -->
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
   <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
-
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
   <!-- Custom CSS -->
   <link rel="stylesheet" href="/css/styles.css">
   
@@ -114,16 +114,17 @@
 <p>情况描述：这几天本地做的总结没有及时上传至github，然后呢今天把github上的文件改了一下。<br>同时想先把远程修改的github上的readme文件git pull下本地，同步一下在继续工作。</p>
 </blockquote>
 <p>首次<code>git pull</code></p>
-<h2 id="报错【磨人的小妖精】："><a href="#报错【磨人的小妖精】：" class="headerlink" title="报错【磨人的小妖精】："></a>报错【磨人的小妖精】：</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">error: Your local changes to the following files would be overwritten</span><br><span class="line">by merge:</span><br><span class="line">        README.md</span><br><span class="line"></span><br><span class="line">Please commit your changes or stash them before you merge.</span><br><span class="line">Aborting</span><br><span class="line"> Updating f2551a8..c4c05f1</span><br></pre></td></tr></table></figure>
+<h4 id="报错【磨人的小妖精】："><a href="#报错【磨人的小妖精】：" class="headerlink" title="报错【磨人的小妖精】："></a>报错【磨人的小妖精】：</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">error: Your local changes to the following files would be overwritten</span><br><span class="line">by merge:</span><br><span class="line">        README.md</span><br><span class="line">Please commit your changes or stash them before you merge.</span><br><span class="line">Aborting</span><br><span class="line"> Updating f2551a8..c4c05f1</span><br></pre></td></tr></table></figure>
 <p>大概意思是我在本地改了readme.md文件，导致远程和本地的文件不一致，无法拉取（pull）下来，要我先把本地的先commit，再git pull，就会将在github上更改的文字合并到本地，</p>
 <p>再次<code>git pull</code></p>
-<h2 id="报错【磨人的小妖精】：-1"><a href="#报错【磨人的小妖精】：-1" class="headerlink" title="报错【磨人的小妖精】："></a>报错【磨人的小妖精】：</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">C:\Users\xjm\Desktop\biaogemimei&gt;git pull</span><br><span class="line"></span><br><span class="line">Auto-merging readmetest.md</span><br><span class="line"></span><br><span class="line">CONFLICT (content): Merge conflict in readmetest.md</span><br><span class="line"></span><br><span class="line">Automatic merge failed; fix conflicts and then commit the result.</span><br></pre></td></tr></table></figure>
+<h4 id="报错【磨人的小妖精】：-1"><a href="#报错【磨人的小妖精】：-1" class="headerlink" title="报错【磨人的小妖精】："></a>报错【磨人的小妖精】：</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">C:\Users\xjm\Desktop\biaogemimei&gt;git pull</span><br><span class="line">Auto-merging readmetest.md</span><br><span class="line">CONFLICT (content): Merge conflict in readmetest.md</span><br><span class="line">Automatic merge failed; fix conflicts and then commit the result.</span><br></pre></td></tr></table></figure>
 <p>大概意思是readmetest.md文件存在冲突，必须手动解决冲突后再执行git add，git commit，git push之类的命令提交</p>
 <blockquote>
 <p>参考廖雪峰-创建合并分支 ，解决冲突</p>
 </blockquote>
-<p>小结<br>当Git无法自动合并分支时，就必须首先解决冲突。解决冲突后，再提交，合并完成。<br>解决冲突就是把Git合并失败的文件<strong>手动编辑</strong>为我们希望的内容，再提交。</p>
-<p>分支合并问题：<br>情况一：顺利合并分支<br>一般都是切换到master然后再执行<code>git merge &lt;name&gt;</code></p>
+<hr>
+<p><strong>小结</strong><br>当Git无法自动合并分支时，就必须首先解决冲突。解决冲突后，再提交，合并完成。<br>解决冲突就是把Git合并失败的文件<strong>手动编辑</strong>为我们希望的内容，再提交。</p>
+<h4 id="分支合并问题："><a href="#分支合并问题：" class="headerlink" title="分支合并问题："></a><strong>分支合并问题：</strong></h4><p><strong>情况一：顺利合并分支</strong><br>一般都是切换到master然后再执行<code>git merge &lt;name&gt;</code></p>
 <p>关于分支<br>Git鼓励大量使用分支：常用命令</p>
 <p>*查看分支：git branch</p>
 <p>*创建分支：git branch <name></name></p>
@@ -131,9 +132,9 @@
 <p>*创建+切换分支：git checkout -b <name></name></p>
 <p>*合并某分支到当前分支：git merge <name></name></p>
 <p>*删除分支：git branch -d <name></name></p>
-<p>情况二：如我今日遇到的</p>
+<p><strong>情况二：如我今日遇到的</strong></p>
 <blockquote>
-<p>补充阅读 [猴子都能懂得git入门-解决合并的冲突]（<a href="https://backlog.com/git-tutorial/cn/stepup/stepup2_7.html）" target="_blank" rel="noopener">https://backlog.com/git-tutorial/cn/stepup/stepup2_7.html）</a></p>
+<p>补充阅读 <a href="https://backlog.com/git-tutorial/cn/stepup/stepup2_7.html" target="_blank" rel="noopener">猴子都能懂得git入门-解决合并的冲突</a></p>
 </blockquote>
 
 </div>
@@ -150,7 +151,9 @@
     <footer class="footer">
 <div class="history-egg text-center">
       
-    <button class="btn history-eggT">history 彩蛋</button>
+    <button class="btn history-eggT"><i class="fas fa-heart"></i>history 彩蛋</button>
+    <div class="history container text-center">《I'm yours》-Jason Mraz</div>
+    <div class="history container text-center">推荐影片《她》-咦！我也想有一个那样的操作系统</div>
     <div class="history container text-center">《意难平》-霜竭</div>
      <div class="history container text-center">《My All》-滨崎步</div>
      <div class="history container text-center">《所爱》-曾雪雅</div> 
@@ -165,13 +168,14 @@
     .
     .
     .
-  duang
+  <i class="fas fa-bomb"></i>duang
 </pre>
-   <div class="container">今日推荐影片《她》-咦！我也想有一个那样的操作系统</div> 
+   <div class="container"><i class="fas fa-headphones"></i>《绵羊》-薄荷绿乐队</div> 
 </div>
-<div class="contactUs">
+<div class="contactUs container text-center">
 
-<a href="https://github.com/songguoguo927">Github</a>
+<a href="https://github.com/songguoguo927"><i class="fab fa-github"></i></a>
+
 </div>
 </footer>
     

@@ -228,8 +228,8 @@ h1, h2, h3 {
 .history{
 	display: none;
 }
-.btn:hover ~ .history{
-            display: block;
+.btn:active ~ .history{
+            display: block;					
         }
 				.history-egg{
 					margin-bottom: 20px;

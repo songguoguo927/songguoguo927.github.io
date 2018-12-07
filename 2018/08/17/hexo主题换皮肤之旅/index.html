@@ -27,7 +27,7 @@
   <!-- Pure CSS -->
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
   <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
-
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
   <!-- Custom CSS -->
   <link rel="stylesheet" href="/css/styles.css">
   
@@ -120,6 +120,7 @@
 <p>参考文章：<br><a href="https://www.maintao.com/2014/hexo-theme-from-scratch/" target="_blank" rel="noopener">https://www.maintao.com/2014/hexo-theme-from-scratch/</a><br><a href="http://www.ahonn.me/2016/12/15/create-a-hexo-theme-from-scratch/" target="_blank" rel="noopener">http://www.ahonn.me/2016/12/15/create-a-hexo-theme-from-scratch/</a>  （影响最大）</p>
 <p>现在有一个想法就是首页随便展示四篇文章（目前是展示写的博文，以后可以自定义文章），有可点下一页<br>全部文章在archive里，但这里文章也要有分页，此处是每六篇换下一页<br>（文章排列样式要修改一下）</p>
 <p><strong>2018.11.17update</strong><br>-[x] 在hexo-theme-edinburgh中使用Disqus评论系统<br><strong>2018.11.18update</strong><br>-[x] 解锁简笔画技能<br>-[x] 昨日的bug是disqus在首页都有评论，我的目的是想要每篇文章的后面有，所以只需将<code>&lt;div id=&quot;disqus_thread&quot;&gt;&lt;/div&gt;</code>这一行代码放置在portfolio-full.ejs文件当中，这样就不会在加载主页的时候也有评论啦！！但那段<code>&lt;script&gt;</code>包起来的一段还是要放在<code>&lt;body&gt;</code>闭合标签里面<br>-[x] 布局大法好哇<br>-[x] 手撕footer<br>-[x] 顺便给vscode下了个可以高亮ejs的插件(好看是第一生产力嘛，嘿嘿)<br>-[x] ejs 模板数据渲染可以的很强<br><strong>2018.11.22update</strong><br>-[x] 修正在手机端导航栏不能显示点击的问题</p>
+<p><strong>2018.12.7update</strong><br>-[x] 使用fontAwesome</p>
 
 </div>
 <div id="disqus_thread"></div>
@@ -135,7 +136,9 @@
     <footer class="footer">
 <div class="history-egg text-center">
       
-    <button class="btn history-eggT">history 彩蛋</button>
+    <button class="btn history-eggT"><i class="fas fa-heart"></i>history 彩蛋</button>
+    <div class="history container text-center">《I'm yours》-Jason Mraz</div>
+    <div class="history container text-center">推荐影片《她》-咦！我也想有一个那样的操作系统</div>
     <div class="history container text-center">《意难平》-霜竭</div>
      <div class="history container text-center">《My All》-滨崎步</div>
      <div class="history container text-center">《所爱》-曾雪雅</div> 
@@ -150,13 +153,14 @@
     .
     .
     .
-  duang
+  <i class="fas fa-bomb"></i>duang
 </pre>
-   <div class="container">今日推荐影片《她》-咦！我也想有一个那样的操作系统</div> 
+   <div class="container"><i class="fas fa-headphones"></i>《绵羊》-薄荷绿乐队</div> 
 </div>
-<div class="contactUs">
+<div class="contactUs container text-center">
 
-<a href="https://github.com/songguoguo927">Github</a>
+<a href="https://github.com/songguoguo927"><i class="fab fa-github"></i></a>
+
 </div>
 </footer>
     
