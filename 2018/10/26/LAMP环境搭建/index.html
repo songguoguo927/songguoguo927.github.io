@@ -1,89 +1,115 @@
-<!DOCTYPE HTML>
-<html>
-<head><meta name="generator" content="Hexo 3.8.0">
+<!DOCTYPE html>
+<html lang="en">
+  <!-- Head tag -->
+  <head><meta name="generator" content="Hexo 3.8.0">
   <meta charset="utf-8">
-  
-  <title>LAMP搭建discuz | 逢凉野性 | Love life, love study</title>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
+  <!-- Title -->
   
-  <meta name="author" content="jiamx">
-  
+  <title>LAMP搭建discuz - 逢凉野性</title>
 
-  
-  <meta name="description" content="Keep a sincere heart and smile even you have seen the dark side.">
-  
-
-  
-  
-  <meta name="keywords" content="">
+  <!--Favicon-->
+  <link rel="icon" href="favicon/favicon.ico">
   
 
-  <meta id="viewport" name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, minimal-ui">
-  <meta name="apple-mobile-web-app-capable" content="yes">
-  <meta name="apple-mobile-web-app-status-bar-style" content="black">
-
-  <meta property="og:title" content="LAMP搭建discuz">
-
-  <meta property="og:site_name" content="逢凉野性">
-
+  <!--Description-->
   
-  <meta property="og:image" content="/favicon.ico">
+      <meta name="description" content="Keep a sincere heart and smile even you have seen the dark side.">
   
 
-  <link href="/favicon.ico" rel="icon">
-  <link rel="alternate" href="/atom.xml" title="逢凉野性" type="application/atom+xml">
-  <link rel="stylesheet" href="/css/style.css" media="screen" type="text/css">
+  <!--Author-->
+  
+      <meta name="author" content="jiamx">
+  
+
+  <!-- Pure CSS -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="/css/styles.css">
+  
+
+  <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+  <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+    <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+  
+  <![endif]-->
+
+  <!-- Google Analytics -->
+  
+    <script>
+        (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+                    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+                m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+        })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+        ga('create', 'UA-129363305-1', 'auto');
+        ga('send', 'pageview');
+    </script>
+
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-129363305-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-129363305-1');
+</script>
+
 </head>
 
 
-<body>
-<div class="blog">
-  <div class="content">
-
-    <header>
-  <div class="site-branding">
-    <h1 class="site-title">
-      <a href="/">逢凉野性</a>
-    </h1>
-    <p class="site-description">Love life, love study</p>
-  </div>
-  <nav class="site-navigation">
-    <ul>
+  <body>
+  	<div class="container-fluid navbar-container m-sm-5">
+             <!-- Header -->
+             <nav class="navbar navbar-toggleable-sm navbar-light px-1 py-3 my-3 mb-sm-5">
+  <a class="navbar-brand ml-2" href="/">逢凉野性</a>
+  <!-- <button class="navbar-toggler navbar-toggler-right py-2" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+     <span class="navbar-toggler-icon"></span>
+   </button>-->
+  <label id="menu-toggle" class="navbar-toggler navbar-toggler-right py-2" for="menu-checkbox"><span class="navbar-toggler-icon"></span></label>	
+	<input type="checkbox" id="menu-checkbox">
+  <div class="collapse navbar-collapse text-center" id="navbarCollapse">
+    <ul class="navbar-nav ml-auto my-auto">
       
-        <li><a href="/">Home</a></li>
+        <li class="nav-item">
+          <a class="nav-link" href="/">Home</a>
+        </li>
       
-        <li><a href="/archives">Archives</a></li>
+        <li class="nav-item">
+          <a class="nav-link" href="/archives">Archives</a>
+        </li>
+      
+        <li class="nav-item">
+          <a class="nav-link" href="/about">About</a>
+        </li>
+      
+        <li class="nav-item">
+          <a class="nav-link" href="http://xiajiameng.fun/myfun">Mood</a>
+        </li>
       
     </ul>
-  </nav>
-</header>
-
-    <main class="site-main posts-loop">
-    <article>
-
-  
-    
-    <h3 class="article-title"><span>LAMP搭建discuz</span></h3>
-    
-  
-
-  <div class="article-top-meta">
-    <span class="posted-on">
-      <a href="/2018/10/26/LAMP环境搭建/" rel="bookmark">
-        <time class="entry-date published" datetime="2018-10-26T01:23:30.426Z">
-          2018-10-26
-        </time>
-      </a>
-    </span>
+    <hr class="hidden-md-up">
   </div>
+</nav>
 
 
-  
-
-  <div class="article-content">
-    <div class="entry">
-      
-        <p>本身电脑系统为windows64位<br>前提：</p>
+  		<div class="row">
+  			<div class="col-12 mb-4">
+  <img class="img-fluid project-img" src="/images/unsplash.jpg" alt="LAMP搭建discuz">
+</div>
+<div class="col-lg-3 col-12 pt-3 px-4 pr-lg-5">
+  <h1>LAMP搭建discuz</h1>
+  <!--添加生成目录的容器-->
+  <div id="wrap"></div>
+</div>
+<div class="col-lg-8 col-12 pt-lg-3 mb-4 pl-lg-5 px-lg-0 px-4 portfolio-content">
+  <p>本身电脑系统为windows64位<br>前提：</p>
 <h4 id="一-装好L"><a href="#一-装好L" class="headerlink" title="一,装好L"></a><strong>一,装好L</strong></h4><ol>
 <li>(L:Linux)在电脑上下载了VMware Ubuntu64位镜像 搭建虚拟机上的linux系统.首先将系统本身自带的配置文件/etc/apt/sources.list 进行修改。文件/etc/apt/sources.list是一个普通可编辑的文本文件，保存了ubuntu软件更新的源服务器的地址。把dep那一行的archive.ubuntu.com和security那个都改成mirrors.ailiyun.com<br>【1】更新所有包<br><code>sudo apt update &amp;&amp; sudo apt upgrade</code><br>【2】安装好所需软件包<br>语法：<code>sudo apt install [安装的名字]</code><br>安装的名字可为多个，空格隔开</li>
 </ol>
@@ -116,39 +142,78 @@ phpinfo();
 <h4 id="七-完成测试"><a href="#七-完成测试" class="headerlink" title="七,完成测试"></a><strong>七,完成测试</strong></h4><p>用管理员身份登进去，去到管理中心会有一个提示<br>Please delete install/index.php via FTP<br>这个时候我们去到/var/www/html/forum/install目录下<br><code>sudo rm index.php</code><br>回到浏览器刷新即可。<br>后续完成一个普通用户注册登录，发帖（发两个，一张无图片，一张有图片）成功。则大功告成！<br>（删文件夹 rm -rf forum/）</p>
 <h4 id="八-后续如果自己登，浏览器直接输入"><a href="#八-后续如果自己登，浏览器直接输入" class="headerlink" title="八,后续如果自己登，浏览器直接输入"></a><strong>八,后续如果自己登，浏览器直接输入</strong></h4><p> localhost/forum<br>或127.0.0.1/forum即可打开论坛页面。<br>可以自己完善，将他挂到其他服务器上并可以通过域名访问。进行页面美化等工作。</p>
 
+</div>
+<div id="disqus_thread"></div>
+<!--<a href="javascript:;"  id="btn" title="back-to-top"  style="text-decoration: none;">Top</a>-->
+
+
+
+            </div>
+            
+  	</div>
+    <a href="javascript:;"  id="btn" title="back-to-top"  style="text-decoration: none;">Top</a>
+    <!-- After footer scripts -->
+    <footer class="footer">
+<div class="history-egg text-center">
       
-    </div>
+    <button class="btn history-eggT"><i class="fas fa-heart"></i>history 彩蛋</button>
+    <div class="history container text-center">《I'm yours》-Jason Mraz</div>
+    <div class="history container text-center">推荐影片《她》-咦！我也想有一个那样的操作系统</div>
+    <div class="history container text-center">《意难平》-霜竭</div>
+     <div class="history container text-center">《My All》-滨崎步</div>
+     <div class="history container text-center">《所爱》-曾雪雅</div> 
+    <div class="history container text-center">《曾经也想过一了百了》-中岛美嘉</div>
+     <div class="history container text-center">《小跳蛙》</div>
+</div>
 
-  </div>
+<div class="latest-egg  text-center">
+<pre>
+今日份彩蛋
+    .
+    .
+    .
+    .
+  <i class="fas fa-bomb"></i>duang
+</pre>
+   <div class="container"><i class="fas fa-headphones"></i>《绵羊》-薄荷绿乐队</div> 
+</div>
+<div class="contactUs container text-center">
 
-  <div class="article-footer">
-    <div class="article-meta pull-left">
+<a href="https://github.com/songguoguo927"><i class="fab fa-github"></i></a>
 
-    
-
-    
-
-    </div>
-
-    
-  </div>
-</article>
-
-
-    </main>
-
-    <footer class="site-footer">
-  <p class="site-info">
-    Proudly powered by <a href="https://hexo.io/" target="_blank">Hexo</a> and
-    Theme by <a href="https://github.com/CodeDaraW/Hacker" target="_blank">Hacker</a>
-    <br>
-    
-    &copy; 2019 jiamx
-    
-  </p>
+</div>
 </footer>
     
-  </div>
-</div>
+<script>
+
+/**
+*  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
+*  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables*/
+/*
+var disqus_config = function () {
+this.page.url = PAGE_URL;  // Replace PAGE_URL with your page's canonical URL variable
+this.page.identifier = PAGE_IDENTIFIER; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+};
+*/
+(function() { // DON'T EDIT BELOW THIS LINE
+var d = document, s = d.createElement('script');
+s.src = 'https://https-xiajm-me.disqus.com/embed.js';
+s.setAttribute('data-timestamp', +new Date());
+(d.head || d.body).appendChild(s);
+})();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<script src="https://cdn.jsdelivr.net/npm/auto-toc-js@1.0.0/dist/toc.min.js"></script>                          
+<script>
+    new Toc({
+        wrapperId: 'wrap',
+        insertId: 'wrap',
+        showSerial: true
+    }).createToc();
+</script>
+<script src="/js/totop.js"></script>
+
+
+<script id="dsq-count-scr" src="//https-xiajm-me.disqus.com/count.js" async></script>
 </body>
 </html>
