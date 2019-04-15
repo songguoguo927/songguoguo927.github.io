@@ -89,37 +89,6 @@
     <div class="entry">
       
         <p>大一下的时候，学长学姐就开始建议我们搭博客，但当时自己真的太渣，尝试搭过，但一路上总是那么多坎坎坷坷，电脑不是这有问题就是那有问题，加上遇到困难就畏缩害怕，问了学长学姐后，自己还是没有搭起来，便放弃了。还理所当然觉得还为之过早，现在觉得那种想法可以理解但还是不太正确。<br>也并不是说现在有多厉害，而是随着经历的多了，慢慢的学会不退缩，学会能独立解决就解决，不害怕困难，能平下心来吧。<br>前几天在掘金上看了一篇文章《2018，你该搭建自己的博客了！》看的蛮有感触的，所以决定重拾起当时放下的任务，其实在此之前的一段时间，搭博客这件事在我心里就是一件不敢面对的事，虽然大家都说简单，但我脑中已给他定下难这个印象了。所以一直没有去实现。<br>看了这篇文章后我花了一个下午搭好了，并没有像文章中那样顺顺利利，也遇到过几个问题，但都通过自己谷歌解决了。<br>说实话，真的很开心，就像拔掉了心中的刺。</p>
-<hr>
-<p>现在废话不多说，我们搭博客。按照<a href="http://ryane.top" target="_blank" rel="noopener">http://ryane.top</a> 这个人的博客文章《2018，你该搭建自己的博客了！》。<br>我一步步做下来，有以下感悟：</p>
-<h4 id="第一，认识Github-Page"><a href="#第一，认识Github-Page" class="headerlink" title=" 第一，认识Github Page "></a><strong> 第一，认识Github Page </strong></h4><p> 之前对git有过了解，也熟悉一些基本命令，写过一篇关于如何将本地文件上传至github上，所以关于git这一块就不用说了，已经安装好了git，也注册了，相关SSH也配置好了。<br> 所以着重认识什么是<strong> Github Page，它可以被认为是用户编写的、托管在github上的静态网页 </strong>。<br> 它可以绑定我们的一个域名，简单快捷，为我们提供一个免费的服务器，免去了自己搭建服务器和写数据库的麻烦。</p>
-<hr>
-<h4 id="第二，安装Node-js-npm"><a href="#第二，安装Node-js-npm" class="headerlink" title="第二，安装Node.js, npm "></a><strong>第二，安装Node.js, npm </strong></h4><p> 去官网下载就好，根据电脑64 or32位自行下载安装（直接无脑下一步）对应版本，暂时不用配置环境变量。<br>由于新版的NodeJS已经集成了npm，所以之前npm也一并安装好了.</p>
-<p><em>判断git，nodejs,npm是否安装成功，直接在终端cmd，<code>git --version</code>,<code>node -v</code>都显示对应的版本号说明安装成功.</em></p>
-<p>在这里，命途多舛一：安装时，npm报错，然后我测试<code>npm -v</code>发现没有出现对应的版本，再静下心来看看一大堆英文说啥：原来是<strong>文件夹权限问题</strong></p>
-<p>解决办法：在nodejs文件夹右键属性》安全》编辑，把方框里的权限改成允许。再确定》确定。</p>
-<hr>
-<h4 id="第三，Hexo（博客框架）安装"><a href="#第三，Hexo（博客框架）安装" class="headerlink" title=" 第三，Hexo（博客框架）安装 "></a><strong> 第三，Hexo（博客框架）安装 </strong></h4><p> 桌面右键鼠标，点击Git Bash Here，输入npm命令即可安装</p>
-<p><code>npm install hexo-cli -g</code>或 <code>$ npm install -g hexo</code></p>
-<p><code>npm install hexo-deployer-git --save</code></p>
-<p> 第一条命令后，出现如下，说明安装完成。<br><img src="" alt="hexo安装完成提示"></p>
-<p>在这里，命途多舛二：第二条命令时出现报错，提示<strong> hexo不是内部命令问题</strong>。<br>参考文章：<a href="https://blog.csdn.net/qq_27093465/article/details/72954725" target="_blank" rel="noopener">https://blog.csdn.net/qq_27093465/article/details/72954725</a><br>原来是 <strong>高级环境变量问题</strong><br>解决办法：在系统环境变量path加上C:\Program Files\nodejs\node_global\node_modules\hexo\node_modules.bin（具体路径结合自己的安装路径情况分析）</p>
-<p> 再判断一下问题是否解决，直接在终端cmd，<code>hexo -v</code>  or <code>hexo</code>分别出现版本提示，或一些hexo基本命令<br> 如下图：<br> <img src="" alt="命途多舛二解决，hexo安装成功"></p>
-<p>第二条命令可以现在安装，也可以在后面安装，都可以，反正躲不过。</p>
-<hr>
-<h4 id="第四，Hexo初始化配置"><a href="#第四，Hexo初始化配置" class="headerlink" title=" 第四，Hexo初始化配置 "></a><strong> 第四，Hexo初始化配置 </strong></h4><p>然后在你新建的 （想在哪建就在哪件，自己记清楚就行）一个文件夹(空的)下右键git bash here</p>
-<p><code>hexo init</code></p>
-<p><img src="" alt="初始化命令面板提示完成"><br><img src="" alt="原本新建的文件夹里生成一些文件"><br>这样就完成啦。<br>我们再执行以下命令：</p>
-<p><code>hexo generate</code><br><code>hexo server</code></p>
-<p>登录localhost:4000，既可以看到本地效果</p>
-<p><img src="" alt="localhost:4000初始页面，说明本地已搭建好"></p>
-<hr>
-<h4 id="第五，将博客部署到Github-Pages上"><a href="#第五，将博客部署到Github-Pages上" class="headerlink" title=" 第五，将博客部署到Github Pages上 "></a><strong> 第五，将博客部署到Github Pages上 </strong></h4><p>我看的那篇文章上更详细。</p>
-<p>以后我们每写完一篇博客想部署到Github Pages上，只要执行以下两条命令即可。</p>
-<p><code>$ hexo g</code>                                   <em>  生成文件 </em><br><code>$hexo d #部署</code>                       <em> d是deploy的简写 </em></p>
-<p>也可以将上面的命令合并为<br> <code>hexo g -d</code></p>
-<hr>
-<p>好啦就到这啦，也没那么难嘛。我们都可以的。</p>
-
       
     </div>
 
@@ -129,7 +98,21 @@
     <div class="article-meta pull-left">
 
     
+      
 
+    <span class="post-categories">
+      <i class="icon-categories"></i>
+        <a href="/categories/hexo/">hexo</a>
+    </span>
+    
+
+    
+    
+
+    <span class="post-tags">
+      <i class="icon-tags"></i>
+        <a href="/tags/init/">init</a>
+    </span>
     
 
     </div>
@@ -178,20 +161,9 @@
     <div class="entry">
       
         <p>首先自己在hexo官网主题找了一个hexo-theme-edinburgh主题，并按照相关操作弄好了，只不过弄出来的有点简陋（只有单张图片，而且无导航栏）与模板相比，所以我决定基于这个主题自己撸一个。</p>
-<p>看了那么多没啥头绪，决定自己制作一个主题，熟悉了一下主题里面各项文件的具体作用后，才开始修改。</p>
-<p>做了以下修改：<br>1，左上角的hexo改成xjm’s blog<br>2，加了导航栏<br>3，将点进去的文章页图片尺寸大小调了下<br>待做修改：<br>1，完善导航栏点击后的内容<br>2，增加个人相关介绍联系<br>3，给内部文章在左侧标题下方设置目录<br>4，首页每篇文章图片实现不一样的封面<br>5，实现点击归类栏后呈现不同技术栈归类下的文章目录</p>
-<p>7，用***云存储图片，这样写文章就可以随意插入自己的图片啦</p>
-<p>日后待完善：<br>6，想在文章页面底部添加一个回到顶部的按钮</p>
-<p>暂时用了锚链接(简单快速没有兼容性问题)，简单的HTML+css做了一下返回顶部.<br>考虑到，用锚链接视觉上不够直观，用户体验不够好。</p>
-<p>所以改写，用<strong>原生javascript实现回到顶部的按钮</strong>。<br>主要运用知识点：<br><strong>1，DOM操作</strong><br>     1),document.getElementById            根据ID获取元素标签<br>     2),document.Element.scrollTop         滚动条的数值，可读写<br><strong>2，事件运用</strong><br>     1),window.onload        页面加载完毕后触发<br>     2),onclick                         点击后触发<br>     3),window.onscroll       滚动滚动条时触发<br><strong>3，定时器</strong><br>      1),setInterval()        设置定时器，需传2个参数<br>      2),clearInterval()     关闭定时器，需传1个参数                    </p>
-<p>日后用jquery再重写一下原生js<br>为了显得人性化使用了js的scroll，show，hide方法，使最开始是隐藏的当下滚到一定高度再显现出来。</p>
-<p>参考文章：<br><a href="https://www.maintao.com/2014/hexo-theme-from-scratch/" target="_blank" rel="noopener">https://www.maintao.com/2014/hexo-theme-from-scratch/</a><br><a href="http://www.ahonn.me/2016/12/15/create-a-hexo-theme-from-scratch/" target="_blank" rel="noopener">http://www.ahonn.me/2016/12/15/create-a-hexo-theme-from-scratch/</a>  （影响最大）</p>
-<p>现在有一个想法就是首页随便展示四篇文章（目前是展示写的博文，以后可以自定义文章），有可点下一页<br>全部文章在archive里，但这里文章也要有分页，此处是每六篇换下一页<br>（文章排列样式要修改一下）</p>
-<p><strong>2018.11.17update</strong><br>-[x] 在hexo-theme-edinburgh中使用Disqus评论系统<br><strong>2018.11.18update</strong><br>-[x] 解锁简笔画技能<br>-[x] 昨日的bug是disqus在首页都有评论，我的目的是想要每篇文章的后面有，所以只需将<code>&lt;div id=&quot;disqus_thread&quot;&gt;&lt;/div&gt;</code>这一行代码放置在portfolio-full.ejs文件当中，这样就不会在加载主页的时候也有评论啦！！但那段<code>&lt;script&gt;</code>包起来的一段还是要放在<code>&lt;body&gt;</code>闭合标签里面<br>-[x] 布局大法好哇<br>-[x] 手撕footer<br>-[x] 顺便给vscode下了个可以高亮ejs的插件(好看是第一生产力嘛，嘿嘿)<br>-[x] ejs 模板数据渲染可以的很强<br><strong>2018.11.22update</strong><br>-[x] 修正在手机端导航栏不能显示点击的问题</p>
-<p><strong>2018.12.7update</strong><br>-[x] 使用fontAwesome</p>
-
+<p>看了那么多没啥头绪，决定自己制作一个主题。<br>
       
-    </div>
+    </p></div>
 
   </div>
 
@@ -199,7 +171,21 @@
     <div class="article-meta pull-left">
 
     
+      
 
+    <span class="post-categories">
+      <i class="icon-categories"></i>
+        <a href="/categories/主题/">主题</a>
+    </span>
+    
+
+    
+    
+
+    <span class="post-tags">
+      <i class="icon-tags"></i>
+        <a href="/tags/换肤/">换肤</a>
+    </span>
     
 
     </div>
@@ -248,34 +234,11 @@
     <div class="entry">
       
         <h4 id="git下载安装配置"><a href="#git下载安装配置" class="headerlink" title="git下载安装配置"></a>git下载安装配置</h4><p><strong>一，注册账号</strong> 在<a href="http://www.github.com" target="_blank" rel="noopener">http://www.github.com</a>注册</p>
-<hr>
 <p><strong>二，新建仓库</strong> 第一步完成后，在个人主页点击右上角个人头像，点击”profile”，进入界面后。点击”Repositories”进入，仓库界面，点击右方的”New”即可新建一个新仓库了。</p>
-<hr>
 <p><strong>三，下载git</strong> 地址：<a href="https://git-scm.com/downloads" target="_blank" rel="noopener">https://git-scm.com/downloads</a> 安装时默认安装即可。</p>
-<hr>
-<p><strong>四，git配置-SSH key配置</strong></p>
-<p>1.创建本地的ssh key。双击Git Bash，出现命令行界面。</p>
-<p>2.检查本机是否有ssh key设置,输入命令：<code>cd ~/.ssh</code> 或<code>cd .ssh</code>.</p>
-<p>3.如果没有则提示:<code>No such file or directory</code>进行第4步 ;如果有则进入~/.ssh路径下（跳过第4步，进行第5步） .</p>
-<p>4.使用Git Bash生成新的ssh key，输入 ·ssh -keygen -t rsa -C “<a href="mailto:XXXXXX@XXXX.com" target="_blank" rel="noopener">XXXXXX@XXXX.com</a>“。<br><em>然后把后面的邮箱替换成你的注册邮箱</em>。然后一路回车，采用默认路径和空密码。 接着会在默认路径下生成.ssh的文件夹。</p>
-<p>5.在.ssh文件夹中用编辑器打开id_rsa.pub复制里面的密钥。进入github，点击头像上的”Setting”，左侧有个SSH Keys，点击它，进入页面。点击右侧的”Add SSH key”，自己输入一个标题，然后把密钥赋值进去即可。测试一下是否成功，进入git bash，输入 ssh -T <a href="mailto:git@github.com" target="_blank" rel="noopener">git@github.com</a>。第一次会提示，是否continue，yes后就会看到：You’ve successfully authenticated, but GitHub does not provide shell access。这就说明成功了。</p>
-<p>6.设置用户名和邮箱<br><code>git config --global user.name &quot;your name&quot;</code><br><code>git config --global user.email &quot;your_email@youremail.com&quot;</code></p>
-<h4 id="将本地文件上传至github上"><a href="#将本地文件上传至github上" class="headerlink" title="将本地文件上传至github上"></a>将本地文件上传至github上</h4><blockquote>
-<p>前提：有github账号，且github上仓库已建好，本地git下载安装好，git配置好。</p>
-</blockquote>
-<p>情况一：直接将本地文件夹当成仓库（先有文件，后有仓库）</p>
-<p><strong>核心</strong>：将本地仓库与远程仓库关联（即使名字不一样）</p>
-<p>1.首先在你想上传什么文件的文件夹中右键，我这里以test目录为例&gt;Git Bash Here.</p>
-<p>2.输入命令<code>git init</code>对仓库进行初始化.</p>
-<p>3.给仓库添加远程地址（将本地项目test与github上的lunbotu项目进行关联），输入命令 <code>git remote add origin https://github.com/songguoguo927/lunbotu.git</code>.</p>
-<p>4.输入<code>git add .</code>选择要提交的文件，此处 . 表示所有文件，可以单独选择某个文件，自己去搜。</p>
-<p>5.输入<code>git commit -m &quot;提交描述&quot;</code>.</p>
-<p>6.最后输入<code>git push origin master</code>，会提示你输入用户名，输入后回车，提示输入密码，输入好后再回车，等待提交就可以。<br><em>最终结果就是：github的仓库lunbotu里有本地文件夹test里的文件</em></p>
-<p>情况二：将本地文件上传至github上建好的仓库（先有仓库，后有文件）</p>
-<p><strong>核心</strong>：使用<code>git clone</code>命令。<br><code>$ git clone https://github.com/songguoguo927/songguoguo927.github.io.git</code><br>比如，就是将我在github上建的仓库（名字：songguoguo927.github.io.git）clone到本地，我们可以将clone命令理解为高级点的复制，这个时候该项目（songguoguo927.github.io）本身就是一个git仓库了，不需要执行<code>git init</code>进行初始化，而且甚至都已经关联好了远程仓库，我们只需要在本地的songguoguo927.github.io目录下任意修改或者添加文件，然后进行commit，之后就可以执行：<code>git push origin master</code>进行代码提交。</p>
-
+<p><strong>四，git配置-SSH key配置</strong><br>
       
-    </div>
+    </p></div>
 
   </div>
 
@@ -283,7 +246,21 @@
     <div class="article-meta pull-left">
 
     
+      
 
+    <span class="post-categories">
+      <i class="icon-categories"></i>
+        <a href="/categories/GIT/">GIT</a>
+    </span>
+    
+
+    
+    
+
+    <span class="post-tags">
+      <i class="icon-tags"></i>
+        <a href="/tags/文件上传/">文件上传</a>
+    </span>
     
 
     </div>
@@ -341,7 +318,21 @@
     <div class="article-meta pull-left">
 
     
+      
 
+    <span class="post-categories">
+      <i class="icon-categories"></i>
+        <a href="/categories/hexo/">hexo</a>
+    </span>
+    
+
+    
+    
+
+    <span class="post-tags">
+      <i class="icon-tags"></i>
+        <a href="/tags/recording/">recording</a>
+    </span>
     
 
     </div>
