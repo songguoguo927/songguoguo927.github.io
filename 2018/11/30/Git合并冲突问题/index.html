@@ -1,115 +1,89 @@
-<!DOCTYPE html>
-<html lang="en">
-  <!-- Head tag -->
-  <head><meta name="generator" content="Hexo 3.8.0">
+<!DOCTYPE HTML>
+<html>
+<head><meta name="generator" content="Hexo 3.8.0">
   <meta charset="utf-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-
-  <!-- Title -->
   
-  <title>Git合并冲突问题 - 逢凉野性</title>
+  <title>Git合并冲突问题 | 逢凉野性 | Love life, love study</title>
 
-  <!--Favicon-->
-  <link rel="icon" href="favicon/favicon.ico">
+  
+  <meta name="author" content="jiamx">
   
 
-  <!--Description-->
   
-      <meta name="description" content="Keep a sincere heart and smile even you have seen the dark side.">
-  
-
-  <!--Author-->
-  
-      <meta name="author" content="jiamx">
+  <meta name="description" content="Keep a sincere heart and smile even you have seen the dark side.">
   
 
-  <!-- Pure CSS -->
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
-  <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
-  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
-  <!-- Custom CSS -->
-  <link rel="stylesheet" href="/css/styles.css">
+  
+  
+  <meta name="keywords" content="">
   
 
-  <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
-  <!--[if lt IE 9]>
-    <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
-    <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+  <meta id="viewport" name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, minimal-ui">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+
+  <meta property="og:title" content="Git合并冲突问题">
+
+  <meta property="og:site_name" content="逢凉野性">
+
   
-  <![endif]-->
-
-  <!-- Google Analytics -->
+  <meta property="og:image" content="/favicon.ico">
   
-    <script>
-        (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-                    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-                m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-        })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
-        ga('create', 'UA-129363305-1', 'auto');
-        ga('send', 'pageview');
-    </script>
 
-
-  <!-- Global site tag (gtag.js) - Google Analytics -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=UA-129363305-1"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'UA-129363305-1');
-</script>
-
+  <link href="/favicon.ico" rel="icon">
+  <link rel="alternate" href="/atom.xml" title="逢凉野性" type="application/atom+xml">
+  <link rel="stylesheet" href="/css/style.css" media="screen" type="text/css">
 </head>
 
 
-  <body>
-  	<div class="container-fluid navbar-container m-sm-5">
-             <!-- Header -->
-             <nav class="navbar navbar-toggleable-sm navbar-light px-1 py-3 my-3 mb-sm-5">
-  <a class="navbar-brand ml-2" href="/">逢凉野性</a>
-  <!-- <button class="navbar-toggler navbar-toggler-right py-2" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
-     <span class="navbar-toggler-icon"></span>
-   </button>-->
-  <label id="menu-toggle" class="navbar-toggler navbar-toggler-right py-2" for="menu-checkbox"><span class="navbar-toggler-icon"></span></label>	
-	<input type="checkbox" id="menu-checkbox">
-  <div class="collapse navbar-collapse text-center" id="navbarCollapse">
-    <ul class="navbar-nav ml-auto my-auto">
+<body>
+<div class="blog">
+  <div class="content">
+
+    <header>
+  <div class="site-branding">
+    <h1 class="site-title">
+      <a href="/">逢凉野性</a>
+    </h1>
+    <p class="site-description">Love life, love study</p>
+  </div>
+  <nav class="site-navigation">
+    <ul>
       
-        <li class="nav-item">
-          <a class="nav-link" href="/">Home</a>
-        </li>
+        <li><a href="/">Home</a></li>
       
-        <li class="nav-item">
-          <a class="nav-link" href="/archives">Archives</a>
-        </li>
-      
-        <li class="nav-item">
-          <a class="nav-link" href="/about">About</a>
-        </li>
-      
-        <li class="nav-item">
-          <a class="nav-link" href="http://xiajiameng.fun/myfun">Mood</a>
-        </li>
+        <li><a href="/archives">Archives</a></li>
       
     </ul>
-    <hr class="hidden-md-up">
+  </nav>
+</header>
+
+    <main class="site-main posts-loop">
+    <article>
+
+  
+    
+    <h3 class="article-title"><span>Git合并冲突问题</span></h3>
+    
+  
+
+  <div class="article-top-meta">
+    <span class="posted-on">
+      <a href="/2018/11/30/Git合并冲突问题/" rel="bookmark">
+        <time class="entry-date published" datetime="2018-11-30T11:23:40.000Z">
+          2018-11-30
+        </time>
+      </a>
+    </span>
   </div>
-</nav>
 
 
-  		<div class="row">
-  			<div class="col-12 mb-4">
-  <img class="img-fluid project-img" src="/images/unsplash.jpg" alt="Git合并冲突问题">
-</div>
-<div class="col-lg-3 col-12 pt-3 px-4 pr-lg-5">
-  <h1>Git合并冲突问题</h1>
-  <!--添加生成目录的容器-->
-  <div id="wrap"></div>
-</div>
-<div class="col-lg-8 col-12 pt-lg-3 mb-4 pl-lg-5 px-lg-0 px-4 portfolio-content">
-  <p>今日小结【解决合并冲突问题】</p>
+  
+
+  <div class="article-content">
+    <div class="entry">
+      
+        <p>今日小结【解决合并冲突问题】</p>
 <blockquote>
 <p>情况描述：这几天本地做的总结没有及时上传至github，然后呢今天把github上的文件改了一下。<br>同时想先把远程修改的github上的readme文件git pull下本地，同步一下在继续工作。</p>
 </blockquote>
@@ -137,78 +111,39 @@
 <p>补充阅读 <a href="https://backlog.com/git-tutorial/cn/stepup/stepup2_7.html" target="_blank" rel="noopener">猴子都能懂得git入门-解决合并的冲突</a></p>
 </blockquote>
 
-</div>
-<div id="disqus_thread"></div>
-<!--<a href="javascript:;"  id="btn" title="back-to-top"  style="text-decoration: none;">Top</a>-->
-
-
-
-            </div>
-            
-  	</div>
-    <a href="javascript:;"  id="btn" title="back-to-top"  style="text-decoration: none;">Top</a>
-    <!-- After footer scripts -->
-    <footer class="footer">
-<div class="history-egg text-center">
       
-    <button class="btn history-eggT"><i class="fas fa-heart"></i>history 彩蛋</button>
-    <div class="history container text-center">《I'm yours》-Jason Mraz</div>
-    <div class="history container text-center">推荐影片《她》-咦！我也想有一个那样的操作系统</div>
-    <div class="history container text-center">《意难平》-霜竭</div>
-     <div class="history container text-center">《My All》-滨崎步</div>
-     <div class="history container text-center">《所爱》-曾雪雅</div> 
-    <div class="history container text-center">《曾经也想过一了百了》-中岛美嘉</div>
-     <div class="history container text-center">《小跳蛙》</div>
-</div>
+    </div>
 
-<div class="latest-egg  text-center">
-<pre>
-今日份彩蛋
-    .
-    .
-    .
-    .
-  <i class="fas fa-bomb"></i>duang
-</pre>
-   <div class="container"><i class="fas fa-headphones"></i>《绵羊》-薄荷绿乐队</div> 
-</div>
-<div class="contactUs container text-center">
+  </div>
 
-<a href="https://github.com/songguoguo927"><i class="fab fa-github"></i></a>
+  <div class="article-footer">
+    <div class="article-meta pull-left">
 
-</div>
+    
+
+    
+
+    </div>
+
+    
+  </div>
+</article>
+
+
+    </main>
+
+    <footer class="site-footer">
+  <p class="site-info">
+    Proudly powered by <a href="https://hexo.io/" target="_blank">Hexo</a> and
+    Theme by <a href="https://github.com/CodeDaraW/Hacker" target="_blank">Hacker</a>
+    <br>
+    
+    &copy; 2019 jiamx
+    
+  </p>
 </footer>
     
-<script>
-
-/**
-*  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
-*  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables*/
-/*
-var disqus_config = function () {
-this.page.url = PAGE_URL;  // Replace PAGE_URL with your page's canonical URL variable
-this.page.identifier = PAGE_IDENTIFIER; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
-};
-*/
-(function() { // DON'T EDIT BELOW THIS LINE
-var d = document, s = d.createElement('script');
-s.src = 'https://https-xiajm-me.disqus.com/embed.js';
-s.setAttribute('data-timestamp', +new Date());
-(d.head || d.body).appendChild(s);
-})();
-</script>
-<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
-<script src="https://cdn.jsdelivr.net/npm/auto-toc-js@1.0.0/dist/toc.min.js"></script>                          
-<script>
-    new Toc({
-        wrapperId: 'wrap',
-        insertId: 'wrap',
-        showSerial: true
-    }).createToc();
-</script>
-<script src="/js/totop.js"></script>
-
-
-<script id="dsq-count-scr" src="//https-xiajm-me.disqus.com/count.js" async></script>
+  </div>
+</div>
 </body>
 </html>
