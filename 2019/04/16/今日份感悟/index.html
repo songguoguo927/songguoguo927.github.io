@@ -96,9 +96,26 @@
 <p>Add：身边一个大佬写了八百多篇文章，向他学习。</p>
 <h3 id="css预处理器styl"><a href="#css预处理器styl" class="headerlink" title="css预处理器styl"></a>css预处理器styl</h3><p>更改后的颜色 #8d309b</p>
 <p>更改颜色的过程中看了一下theme主题下的相关css 都是使用styl编写的，css预处理器，感觉它使得css代码更可读，且有利于维护和更改。比如有些文件中，将主题色先统一定义成一个变量，其他要用到这个颜色，<br>只需要更改颜色变量的值就可以，而不用去找一系列的颜色去修改，很方便。</p>
-<h3 id="rem与em"><a href="#rem与em" class="headerlink" title="rem与em"></a>rem与em</h3><blockquote>
-<p>更改颜色的过程中，发现rem和em两种定义字体大小的方式，虽然以前见过，也用过，但没有总结过。所以在这里想好好弄清楚css中单位这一块的内容。</p>
+<blockquote>
+<p>专业一点的描述：<br>所有css预处理器的最终目的都是一致的：通过编写<strong>更高效，易管理</strong>的类css脚本并将他们自动生成为浏览器可以解释执行的 css代码，(高效开发，便捷管理)，让我们更好的专注于业务模块层中css脚本开发。</p>
 </blockquote>
+<h3 id="rem与em"><a href="#rem与em" class="headerlink" title="rem与em"></a>rem与em</h3><blockquote>
+<p>更改颜色的过程中，发现rem和em两种定义字体大小的方式，虽然以前见过，也用过，但没有总结过。所以在这里想好好弄清楚css中单位这一块的内容。<br>css单位<br>px em % pc pt cm </p>
+<ul>
+<li>相对单位:rem/em/vm/vh/%<br><strong>em</strong>:作为font-size的单位时，其代表<strong>相对父元素</strong>的字体大小</li>
+</ul>
+</blockquote>
+<p>html结构：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">body font-size:12px</span><br><span class="line">    p font-size:1.5em </span><br><span class="line">        span font-size:1.2em</span><br><span class="line">　　//p的大小为`12px*1.5em=18px`；span的大小为`18px*1.2em=21.6px`</span><br></pre></td></tr></table></figure>
+<p><strong>rem</strong>:作用于非根元素时，<strong>相对于根元素(html)</strong>字体大小</p>
+<p>html结构：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">body font-size:12px</span><br><span class="line">    p font-size:1.5rem </span><br><span class="line">        span font-size:1.2rem</span><br><span class="line">　　//p的大小为`16px*1.5em=24px`；span的大小为`16px*1.2em=19.2px`</span><br></pre></td></tr></table></figure></p>
+<blockquote>
+<p>所有浏览器的默认font-size值都为16px IE8的默认font-size为12pt,在桌面端的Chrome/Opera存在最小字体限制，最小字体为12px</p>
+</blockquote>
+<p>应用：解决移动端适配问题。一些不同size的手机。<br><strong>vw(view视窗 width)/vh(view height)</strong></p>
+<p>1vw —— 视口宽度的 1/100；1vh —— 视口高度的 1/100</p>
+<p><strong>vmin/vmax</strong>：</p>
+<p><strong>可视范围的宽度或高度</strong>中较小/大的尺寸</p>
 
       
     </div>
