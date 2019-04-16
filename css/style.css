@@ -440,7 +440,7 @@ a {
   text-decoration: none;
 }
 body {
-  background-color: #f7f7f7;
+  background: rgba(200,54,54,0.1);
   font-family: "Segoe UI", "Lucida Grande", Helvetica, "Microsoft YaHei", FreeSans, Arimo, "Droid Sans", "wenquanyi micro hei", "Hiragino Sans GB", "Hiragino Sans GB W3", Arial, sans-serif;
   -moz-osx-font-smoothing: grayscale;
   -webkit-font-smoothing: antialiased;
@@ -477,7 +477,7 @@ header .site-branding .site-title a {
   display: inline-block;
   color: #fff;
   font-weight: bolder;
-  background-color: #f03838;
+  background-color: #8d309b;
   line-height: 3rem;
   height: 3rem;
   padding: 0 1rem;
@@ -507,7 +507,7 @@ header .site-navigation ul li {
 }
 header .site-navigation ul li a {
   display: block;
-  color: #f03838;
+  color: #8d309b;
   font-size: 1.6rem;
   line-height: 2rem;
   padding: 0 1rem;
@@ -562,7 +562,7 @@ article .article-title a:hover span {
 }
 article .article-top-meta {
   position: relative;
-  color: #9e9e9e;
+  color: #8d309b;
   font-size: 1.3rem;
   text-align: center;
   margin: 1rem 0;
@@ -571,7 +571,7 @@ article .article-top-meta span {
   margin: 0 0.5rem;
 }
 article .article-top-meta a {
-  color: #9e9e9e;
+  color: #8d309b;
 }
 article .article-top-meta a:hover {
   color: #f03838;
@@ -617,17 +617,17 @@ article .article-footer .article-meta > span > span {
 }
 article .article-footer .article-meta {
   font-size: 1.3rem;
-  color: #9e9e9e;
+  color: #8d309b;
 }
 article .article-footer .article-meta a {
-  color: #9e9e9e;
+  color: #8d309b;
 }
 article .article-footer .article-meta a:hover {
   color: #f03838;
 }
 article .article-footer .article-meta i {
   vertical-align: middle;
-  color: #9e9e9e;
+  color: #8d309b;
   margin-right: 0.5rem;
 }
 article .article-footer .post-tags a:before {
@@ -707,7 +707,7 @@ article.archive {
   margin: 2em auto;
 }
 .archive-post .archive-title {
-  font-size: 2.8em;
+  font-size: 2em;
   line-height: 1;
   position: relative;
   color: #212121;
@@ -771,7 +771,7 @@ article .archive-tags > span > span {
 article .archive-tags,
 article .tags-cloud {
   margin: 8rem 0;
-  font-size: 1.3rem;
+  font-size: 1.2rem;
   color: #9e9e9e;
 }
 article .archive-tags a,
@@ -831,7 +831,7 @@ article .archive-categories > span > span {
 article .archive-categories,
 article .categories-cloud {
   margin: 8rem 0;
-  font-size: 1.3rem;
+  font-size: 1.2rem;
   color: #9e9e9e;
 }
 article .archive-categories a,
@@ -875,7 +875,7 @@ article .categories-cloud .post-categories a:not(:last-of-type):after {
 }
 .pagination .pagination-prev,
 .pagination .pagination-next {
-  color: #f03838;
+  color: #8d309b;
   font-size: 1.6rem;
   border: 1px solid #e0e0e0;
   line-height: 30px;
@@ -888,21 +888,21 @@ article .categories-cloud .post-categories a:not(:last-of-type):after {
 .pagination .pagination-prev:hover,
 .pagination .pagination-next:hover {
   color: #fff;
-  background-color: #f03838;
-  border-color: #f03838;
+  background-color: #8d309b;
+  border-color: #8d309b;
 }
 footer.site-footer {
   position: relative;
   text-align: center;
   line-height: 1.8;
   padding-top: 1rem;
-  color: #9e9e9e;
+  color: #8d309b;
 }
 footer.site-footer a {
   color: #f03838;
 }
 footer.site-footer .site-info {
-  color: #9e9e9e;
+  color: #8d309b;
   font-size: 1.3rem;
   margin: 0.5rem 0;
 }

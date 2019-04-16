@@ -48,7 +48,7 @@ article .article-title a:hover span {
 }
 article .article-top-meta {
   position: relative;
-  color: #9e9e9e;
+  color: #8d309b;
   font-size: 1.3rem;
   text-align: center;
   margin: 1rem 0;
@@ -57,7 +57,7 @@ article .article-top-meta span {
   margin: 0 0.5rem;
 }
 article .article-top-meta a {
-  color: #9e9e9e;
+  color: #8d309b;
 }
 article .article-top-meta a:hover {
   color: #f03838;
@@ -103,17 +103,17 @@ article .article-footer .article-meta > span > span {
 }
 article .article-footer .article-meta {
   font-size: 1.3rem;
-  color: #9e9e9e;
+  color: #8d309b;
 }
 article .article-footer .article-meta a {
-  color: #9e9e9e;
+  color: #8d309b;
 }
 article .article-footer .article-meta a:hover {
   color: #f03838;
 }
 article .article-footer .article-meta i {
   vertical-align: middle;
-  color: #9e9e9e;
+  color: #8d309b;
   margin-right: 0.5rem;
 }
 article .article-footer .post-tags a:before {
