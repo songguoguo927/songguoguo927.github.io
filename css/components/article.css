@@ -132,7 +132,7 @@ article code {
   border-radius: 0;
 }
 article p {
-  margin: 2rem 0;
+  margin: 2rem 0.5rem;
   line-height: 1.8;
 }
 article .video-container {

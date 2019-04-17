@@ -1,0 +1,270 @@
+<!DOCTYPE HTML>
+<html>
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="utf-8">
+  
+  <title>setTimeout | 逢凉野性 | Love life, love study</title>
+
+  
+  <meta name="author" content="jiamx">
+  
+
+  
+  <meta name="description" content="Keep a sincere heart and smile even you have seen the dark side.">
+  
+
+  
+  
+  <meta name="keywords" content="setTimeout,定时器">
+  
+
+  <meta id="viewport" name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, minimal-ui">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+
+  <meta property="og:title" content="setTimeout">
+
+  <meta property="og:site_name" content="逢凉野性">
+
+  
+  <meta property="og:image" content="/favicon.ico">
+  
+
+  <link href="/favicon.ico" rel="icon">
+  <link rel="alternate" href="/atom.xml" title="逢凉野性" type="application/atom+xml">
+   <link rel="stylesheet" href="/css/style.css" media="screen" type="text/css">
+  <!-- 加载gitment的css和js文件 -->
+  <link rel="stylesheet" href="/css/gitment.css"> 
+  <script src="/js/gitment.js"></script>
+ 
+
+  </head> 
+
+
+<body>
+<div class="blog">
+  <div class="content">
+
+    <header>
+  <div class="site-branding">
+    <h1 class="site-title">
+      <a href="/">逢凉野性</a>
+    </h1>
+    <p class="site-description">Love life, love study</p>
+  </div>
+  <nav class="site-navigation">
+    <ul>
+      
+        <li><a href="/">Home</a></li>
+      
+        <li><a href="/archives">Archives</a></li>
+      
+        <li><a href="/categories">Categories</a></li>
+      
+        <li><a href="/tags">Tags</a></li>
+      
+    </ul>
+  </nav>
+</header>
+
+    <main class="site-main posts-loop">
+    <article>
+
+  
+    
+    <h3 class="article-title"><span>setTimeout</span></h3>
+    
+  
+
+  <div class="article-top-meta">
+    <span class="posted-on">
+      <a href="/2019/04/17/js中setTimeout/" rel="bookmark">
+        <time class="entry-date published" datetime="2019-04-17T03:51:16.000Z">
+          2019-04-17
+        </time>
+      </a>
+    </span>
+  </div>
+
+
+  
+
+  <div class="article-content">
+    <div class="entry">
+      
+        <h3 id="关于定时器，传参的问题"><a href="#关于定时器，传参的问题" class="headerlink" title="关于定时器，传参的问题"></a>关于定时器，传参的问题</h3><p>一次牛客刷题，出现了一个这样的题。我觉得可以好好的思考一下这个问题和其他setTimeout相关的问题。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">function checkState()&#123;</span><br><span class="line">    alert(&quot;xjm&quot;);</span><br><span class="line">&#125;</span><br><span class="line">window.setTimeout(checkState(),10000)//会立即被调用</span><br><span class="line">window.setTimeout(checkState,10000)//10s后被调用</span><br><span class="line">window.setTimeout(&quot;checkState()&quot;,10000)//10s后被调用</span><br></pre></td></tr></table></figure>
+<a id="more"></a>
+<p>关于第一个为何会被立即调用:【这是错误写法】</p>
+<p><strong>解答</strong>：因为setTimeout()会先判断第一个参数是否为「function」，如果不是，则会尝试将它当作字串处理。换句话说，会将checkState()执行后的回传值转为字符串，没有回传值，那就是undefined，于是<br>变成window.setTimeout(“undefined”,10000)，于是10000ms 到了就什么事都没发生。</p>
+<p>另一个解释：setTimeout 需要的是函数的引用这里的 checkState() 很明显是在执行函数，所以实际上传入 setTimeout 的是函数的执行结果。在这个例子中，checkState() 的执行结果是 undefined（也就是说函数没有返回任何结果），所以实际上什么也没有调度。</p>
+<p>若不理解上面的，可以先往下看。回头再理解也是可以的。</p>
+<blockquote>
+<p>我要记录的是一些我觉得我需要记录的点（因为up记性是个硬伤，上文已说，此不赘述）。具体基础用法可自行MDN。</p>
+</blockquote>
+<p><strong>1.定时器</strong></p>
+<ul>
+<li>setTimeout()的作用是在延迟了某段时间(单位为毫秒)之后，才去执行<strong>「一次」</strong>指定的程式码，并且会回传一个独立的timer ID</li>
+<li>setInterval()则是固定延迟了某段时间之后，才去执行对应的程式码，然后<strong>「不断循环」</strong>。剩下定义方式及返回值与setTimeout()类似。</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">var timeoutID = scope.setTimeout(function[, delay, param1, param2, ...]);</span><br><span class="line">var timeoutID = scope.setTimeout(function[, delay]);</span><br><span class="line">var timeoutID = scope.setTimeout(code[, delay]);</span><br></pre></td></tr></table></figure>
+<p>在浏览器的环境宿主物件为window，所以setTimeout()与setInterval()的完整语法自然就是我们所熟悉的window.setTimeout()与window.setInterval了</p>
+<p><strong>2.timeoutID的作用-取消定时器</strong></p>
+<blockquote>
+<p>timeoutID是自己定义的变量名</p>
+</blockquote>
+<p>用到clearInterval()来取消setInterval(),使用方法：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">var timeoutID = window.setInterval(( () =&gt; console.log(&quot;Hello!&quot;) ), 1000);</span><br><span class="line">window.clearInterval(timeoutID);</span><br></pre></td></tr></table></figure>
+<p>clearTimeout()只会在setTimeout()指定的时间未到时才有效果。等setTimeout()的callback function已经被执行，那就等同是多余的了。</p>
+<p><strong>3.关于setTimeout()的第一个参数</strong></p>
+<blockquote>
+<p>就是最开始的那道题。</p>
+</blockquote>
+<p>第一个参数是可以指定字串的，</p>
+<p>如（1）<code>window.setTimeout(&#39;console.log(&quot;Hello!&quot;)&#39;, 1000);</code>效果：先输出一个timeoutID，在1s后控制台打印出Hello！（经测试，无关1000是否为0）</p>
+<blockquote>
+<p>由于内部隐含eval的转换，所以执行上效能会比非字串的版本差一些。</p>
+</blockquote>
+<p>若（2）<code>window.setTimeout(console.log(&quot;Hello!&quot;), 1000);</code>效果：会在立即控制台打印出Hello！再输出一个timeoutID</p>
+<p><strong>为什么会这样立即执行呢？</strong></p>
+<p>setTimeout()会先判断第一个参数是否为「function」，不是，则会尝试将它当作字串处理，会将console.log(“Hello!”)执行后的回传值转为字串，没有回传值，那就是undefined<br>，于是（2）等价于（3）<code>window.setTimeout(&quot;undefined&quot;, 1000);</code>1000ms 到了就什么事都没发生。</p>
+<p>这个时候回去向上就好理解了叭。</p>
+<hr>
+<h3 id="还有一个很经典的题"><a href="#还有一个很经典的题" class="headerlink" title="还有一个很经典的题"></a>还有一个很经典的题</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">for( var i = 0; i &lt; 5; i++ ) &#123;</span><br><span class="line">  window.setTimeout(function() &#123;</span><br><span class="line">    console.log(i);</span><br><span class="line">  &#125;, 1000);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<ul>
+<li>结果：console.log()会在「一秒钟之后」同时印出「五次5」。</li>
+<li>原因：<em>js中变量作用域的最小单位（基本单位）为function</em>。<em>_出自《你不知道的JS-下》2.1</em><br>所以当1000ms过去，变量i的值早已是for循环更新完毕的i，而不是循环内当下的那个i。</li>
+</ul>
+<p><strong>要想解决这个问题有两种方法：</strong></p>
+<ol>
+<li>i 改用 let声明–涉及块作用域</li>
+<li>for循环里改用 IIFE的形式</li>
+</ol>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">(function(x)&#123;</span><br><span class="line">    window.setTimeout(function() &#123;</span><br><span class="line">      console.log(x);</span><br><span class="line">    &#125;, 1000 * x);</span><br><span class="line">  &#125;)(i);</span><br></pre></td></tr></table></figure>
+<hr>
+<h3 id="进阶思考-从setTimeout-看同步、异步与Event-Loop"><a href="#进阶思考-从setTimeout-看同步、异步与Event-Loop" class="headerlink" title="进阶思考-从setTimeout 看同步、异步与Event Loop"></a>进阶思考-从setTimeout 看同步、异步与Event Loop</h3><p><strong>JS是单线程执行的。</strong></p>
+<p>操作系统课老师说，讲到线程，自然就绕不开进程，本质上说，它们都是CPU工作时间片的一个描述。</p>
+<ul>
+<li>进程：描述了CPU在运行指令及加载和保存上下文所需要的时间，从应用上来说就代表了一个程序。</li>
+<li>线程：是进程中一个更小的单位，描述了执行一段指令所需要的时间。</li>
+</ul>
+<p><em>举个栗子理解进程和线程之间的关系：</em></p>
+<p>在浏览器中，我们打开一个标签页时，其实就创建了一个进程，一个进程中可以有多个线程，比如渲染线程，JS引擎线程，HTTP请求线程等等，当我们发起一个请求，其实就是创建了一个线程，请求结束，线程可能被销毁。</p>
+<p><strong>单线程的好处</strong>：节省内存，节约上下文切换时间，没有锁的问题</p>
+<hr>
+<p><strong><em>执行栈</em></strong>：可认为是一个存储函数调用的栈结构。先进后出。栈里有一个个等待被执行的任务，同步，异步的都有。常见异步:setTimeout，ajax。</p>
+<p>当执行JS代码的时候就相当于往执行栈中放入函数，当遇到异步代码时，会被挂起，加入队列中，当执行栈为空时，在从队列中拿出需要执行的代码，放入执行栈中。从本质来看JS的异步还是同步行为。</p>
+<p><strong><em>场景</em></strong>：即便我们在setTimeout()的等待时间设定为0，因为JavaScript会先将其搁置到Queue当中，等待Stack的任务完成后，再回来执行setTimeout()内的callback function。</p>
+<p><strong>所以到这里我们思考一个问题：</strong><code>window.setTimeout(console.log(&quot;Hello!&quot;), 1000);</code>会精确在1000ms后执行吗？</p>
+<p>现在应该很好回答了吧，答案是不会。还是会有些微差别。</p>
+<p>首先我们要建立一个概念：<strong>任何操作都会有时间成本</strong>。虽然JS有异步特色，但依然遵循单一执行栈的规则运行。<br>意思是当我们在主要执行栈内工作的时间太久，势必会延迟 Queue Callback 的执行。</p>
+<p>当中间操作少一点，可能人体感受不明显。但是一旦操作多起来，久而久之带来的误差就会扩大。</p>
+<p><strong>如何解决这个问题呢？</strong></p>
+<h4 id="精准校时"><a href="#精准校时" class="headerlink" title="精准校时?"></a>精准校时?</h4><p>要想精准是不可能了宝贝，但是我们可以通过一些手段来降低误差。</p>
+<ul>
+<li>一开始就先计算 client 的时间与 server 端的时间差，并定期与server端做时间同步修正，使误差维持在最小可接受范围内等。</li>
+<li><a href="https://gaohaoyang.github.io/2016/11/25/how-to-write-a-count-down/" target="_blank" rel="noopener">前端如何写一个精确的倒计时</a></li>
+</ul>
+<p>参考资料:<br><a href="https://kuro.tw/posts/2019/02/23/%E8%AB%87%E8%AB%87-JavaScript-%E7%9A%84-setTimeout-%E8%88%87-setInterval/" target="_blank" rel="noopener">谈谈JavaScript 的setTimeout 与setInterval</a><br><a href="https://zh.javascript.info/settimeout-setinterval#zong-jie" target="_blank" rel="noopener">调度：setTimeout 和 setInterval</a></p>
+
+      
+    </div>
+
+  </div>
+
+  <div class="article-footer">
+    <div class="article-meta pull-left">
+
+    
+      
+
+    <span class="post-categories">
+      <i class="icon-categories"></i>
+        <a href="/categories/Javascript/">Javascript</a>
+    </span>
+    
+
+    
+    
+
+    <span class="post-tags">
+      <i class="icon-tags"></i>
+        <a href="/tags/setTimeout/">setTimeout</a><a href="/tags/定时器/">定时器</a>
+    </span>
+    
+
+    </div>
+
+    
+  </div>
+</article>
+
+  
+
+	<section id="comment" class="comment">
+		<div id="gitment"></div>
+	</section>
+	<link rel="stylesheet" href="https://imsun.github.io/gitment/style/default.css">
+	<script src="https://imsun.github.io/gitment/dist/gitment.browser.js"></script>
+	<script>
+		var gitment = new Gitment({
+			owner: 'songguoguo927',
+			repo: 'songguoguo927.github.io',
+			oauth: {
+				client_id: '8a268308d29f60e2a827',
+				client_secret: '021a67c8b5835d6ba3f279befda4844ee30f7a14',
+			},
+		})
+		gitment.render('gitment')
+	</script>
+
+
+
+
+<div id="gitment"></div>
+
+<!-- 主页不要加载gitment -->
+
+
+<script>
+var gitment = new Gitment({
+  owner: 'songguoguo927',
+  repo: 'songguoguo927.github.io',
+  oauth: {
+    client_id: '8a268308d29f60e2a827',
+    client_secret: '021a67c8b5835d6ba3f279befda4844ee30f7a14',
+  },
+})
+gitment.render('gitment')
+</script>
+ 
+
+
+
+    </main>
+
+    <footer class="site-footer">
+  <p class="site-info">
+    welcome to my <a href="https://github.com/songguoguo927" target="_blank">github</a>
+    <br>
+    
+    &copy; 2019 jiamx
+    
+  </p>
+</footer>
+    
+<script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+                (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+            m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+    ga('create', 'UA-129363305-1', 'auto');
+    ga('send', 'pageview');
+
+</script>
+
+  </div>
+</div>
+</body>
+</html>
